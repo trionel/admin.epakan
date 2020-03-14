@@ -12,7 +12,7 @@
                     <div class="card-body">
                         <div class="mb-4">
                             <span class="badge badge-soft-light float-right">Hari Ini</span>
-                            <h5 class="card-title mb-0 text-white">gitttttt</h5>
+                            <h5 class="card-title mb-0 text-white">Pemasukan</h5>
                         </div>
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">

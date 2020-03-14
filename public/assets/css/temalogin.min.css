@@ -1,0 +1,14 @@
+.bg-login {
+    background: url(../images/bg-epakan.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: #04091e;
+}
+
+.font-size-22 {
+    font-size: 22px !important;
+}
+
+.font-family-secondary {
+    font-family: "Open Sans",sans-serif;
+}

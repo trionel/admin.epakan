@@ -50,7 +50,7 @@ Pesanan
                 <td>{{ $p->total_bayar }}</td>
                 <td>{{ $p->status }}</td>
                 <td class="">
-                  <a href="{{url ('pesanan/pesanan_edit', $p->id_pesanan) }}" class="btn btn-sm btn-primary">Edit</a>
+                  <a href="{{url ('pesanan/pesanan_edit', $p->id_pesanan) }}" class="btn btn-sm btn-primary">Konfirmasi</a>
                   {{-- <a href="{{url ('pesanan/detail_pesanan', $p->id_pesanan) }}" class="btn btn-sm btn-info">Detail</a> --}}
                 </td>
               </tr>

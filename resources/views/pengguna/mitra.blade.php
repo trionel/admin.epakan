@@ -12,7 +12,7 @@
               </div>
               <br>
               <div class="col-md-3"> 
-                <form action="{{ url('/mitra/cari') }}" method="get" class="form-inline"> 
+                <form action="{{ url('/mitra/cari') }}" method="get" class="form-inline" enctype="multipart/form-data"> 
                   <input type="text" name="cari" value="<?php if(isset($_GET['cari'])){ echo $_GET['cari']; } ?>" class="form-control" placeholder="Cari .."> 
                   <input type="submit" class="btn btn-primary" value="Cari"> 
                 </form> 
@@ -38,10 +38,14 @@
                         <td>{{ $m->id_pengguna }}</td>
                         <td>{{ $m->nama }}</td>
                         <td>{{ $m->nik }}</td>
-                        <td>{{ $m->foto_ktp }}</td>
+                        <td>
+                          <img src="{{ $m->foto_ktp }}" alt="">
+                        </td>
                         <td>{{ $m->tipe }}</td>
-                        <td>{{ $m->foto_peternakan }}</td>
-                        <td>{{ $m->foto_cppb }}</td>
+                        <td>
+                          <img src="{{ $m->foto_peternakan }}" alt=""></td>
+                        <td>
+                          <img src="{{ $m->foto_cppb }}" alt=""></td>
                         {{-- <td>{{ $m->foto_sertifikat }}</td> --}}
                         <td><a href="{{url ('mitra/lihat', $m->id) }}" class="btn btn-sm btn-primary">Lihat</a></td>
                     </tr>

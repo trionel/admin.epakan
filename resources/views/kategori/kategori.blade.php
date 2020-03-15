@@ -57,7 +57,8 @@
                 <td>{{ $k->kategori }}</td>
                 <td class="text-center"> 
                     <a href="{{ url('/kategori/edit/'.$k->id) }}" class="btn btn-sm btn-primary">Edit</a> 
-                    <a href="{{ url('/kategori/hapus/'.$k->id) }}" class="btn btn-sm btn-danger">Hapus</a> 
+                    {{-- <a href="{{ url('/kategori/hapus/'.$k->id) }}" class="btn btn-sm btn-danger">Hapus</a>  --}}
+                <a href="" class="btn btn-sm btn-danger ye" kategori-id="{{$k->id}}">Hapus</a> 
                 </td> 
                 </tr>
             @endforeach
@@ -66,4 +67,27 @@
       </div>
     </div>
         </div>
+@endsection
+@section('script')
+<script type="text/javascript">
+  $('.ye').click(function(){
+      var kategori_id = $(this).attr('kategori-id');
+      swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Poof! Your imaginary file has been deleted!", {
+            icon: "success",
+          });
+        } else {
+          swal("Your imaginary file is safe!");
+        }
+      });
+      });
+  </script>
 @endsection

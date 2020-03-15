@@ -21,6 +21,13 @@
     <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
 
+    <!-- Sweet Alerts Js-->
+    <script src="{{ asset ('assets/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- Sweet Alerts Js-->
+    <script src="{{ asset ('assets/pages/sweet-alert-demo.js')}}"></script>
+
     <!-- High Chart js -->
     @yield('chart')
 

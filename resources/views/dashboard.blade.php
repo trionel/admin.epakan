@@ -18,9 +18,6 @@
                             <div class="col-8">
                                 <h4 class="card-title mb-0 text-white">{{ "Rp " . number_format($pemasukan_hari_ini) . " ,-" }}</h4>
                             </div>
-                            <div class="col-4 text-right">
-                                <span class="text-white-50">12.5% <i class="mdi mdi-arrow-up"></i></span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -36,14 +33,11 @@
                             <div class="col-8">
                                 <h4 class="card-title mb-0 text-white">{{ "Rp " . number_format($pemasukan_bulan_ini) . " ,-" }}</h4>
                             </div>
-                            <div class="col-4 text-right">
-                                <span class="text-white-50">12.5% <i class="mdi mdi-arrow-up"></i></span>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-xl-3">
+            {{-- <div class="col-md-6 col-xl-3">
                 <div class="card bg-success border-success">
                     <div class="card-body">
                         <div class="mb-4">
@@ -60,7 +54,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="col-md-6 col-xl-3">
                 <div class="card bg-info border-info">
                     <div class="card-body">
@@ -68,12 +62,30 @@
                             <span class="badge badge-soft-light float-right">Keseluruhan</span>
                             <h5 class="card-title mb-0 text-white">Total Pemasukan</h5>
                         </div>
-                        <div class="row d-flex align-items-center mb-4">
+                        <div class="row d-flex align-items-center mb-0">
                             <div class="col-8">
                                 <h4 class="card-title mb-0 text-white">{{ "Rp " . number_format($seluruh_pemasukan) . " ,-" }}</h4>
                             </div>
-                            <div class="col-4 text-right">
-                                <span class="text-white-50">12.5% <i class="mdi mdi-arrow-up"></i></span>
+                            <div class="icon">
+                                <i class="fas fa-wallet fa-3x text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="card bg-primary border-primary">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Keseluruhan</span>
+                            <h5 class="card-title mb-0 text-white">Pesanan</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-0">
+                            <div class="col-8">
+                            <h4 class="mb-0 text-white">{{count($pesanan)}}</h4>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-clipboard-list text-white fa-3x"></i>
                             </div>
                         </div>
                     </div>
@@ -90,9 +102,6 @@
                             <div class="col-8">
                                 <h4 class="card-title mb-0 text-white">{{ "Rp " . number_format($pengeluaran_hari_ini) . " ,-" }}</h4>
                             </div>
-                            <div class="col-4 text-right">
-                                <span class="text-white-50">12.5% <i class="mdi mdi-arrow-up"></i></span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -108,14 +117,11 @@
                             <div class="col-8">
                                 <h4 class="card-title mb-0 text-white">{{ "Rp " . number_format($pengeluaran_bulan_ini) . " ,-" }}</h4>
                             </div>
-                            <div class="col-4 text-right">
-                                <span class="text-white-50">12.5% <i class="mdi mdi-arrow-up"></i></span>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-xl-3">
+            {{-- <div class="col-md-6 col-xl-3">
                 <div class="card bg-warning border-warning">
                     <div class="card-body">
                         <div class="mb-4">
@@ -132,7 +138,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="col-md-6 col-xl-3">
                 <div class="card bg-danger border-danger">
                     <div class="card-body">
@@ -140,12 +146,31 @@
                             <span class="badge badge-soft-light float-right">Keseluruhan</span>
                             <h5 class="card-title mb-0 text-white">Total Pengeluaran</h5>
                         </div>
-                        <div class="row d-flex align-items-center mb-4">
+                        <div class="row d-flex align-items-center mb-0">
                             <div class="col-8">
                                 <h4 class="card-title mb-0 text-white">{{ "Rp " . number_format($seluruh_pengeluaran) . " ,-" }}</h4>
                             </div>
-                            <div class="col-4 text-right">
-                                <span class="text-white-50">12.5% <i class="mdi mdi-arrow-up"></i></span>
+                            <div class="icon">
+                                <i class="fas fa-dollar-sign text-white fa-3x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="card bg-dark border-dark">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Keseluruhan</span>
+                            <h5 class="card-title mb-0 text-white">Pengguna</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-0">
+                            
+                            <div class="col-8">
+                                <h1 class="card-title mb-0 text-white">{{count($pengguna)}}</h1>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-user-plus fa-3x text-white"></i>
                             </div>
                         </div>
                     </div>
@@ -174,8 +199,43 @@
         
                     </div> <!-- end card-body-->
                 </div> <!-- end card-->
-            </div> <!-- end col -->
+            </div><!-- end col -->
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+        
+                        <h4 class="card-title">Mitra ePakan</h4>
+                        <p class="card-subtitle mb-4">Penyebaran Lokasi Mitra ePakan</p>
+
+                        <div id="googleMap" style="width:100%;height:380px;"></div>
+        
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+            </div>
 @endsection
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+
+<script type="text/javascript">
+function initialize() {
+  var propertiPeta = {
+    center:new google.maps.LatLng(-5.3592165234023215,105.26252601295711),
+    zoom:15,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  
+  var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+  
+  // membuat Marker
+  var marker=new google.maps.Marker({
+      position: new google.maps.LatLng(-5.3592165234023215,105.26252601295711),
+      map: peta
+  });
+}
+    // event jendela di-load  
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt6a6dy99jZcyrlIe7OghOsZ0khO1x4O8&libraries=places" async defer> </script>
+
 @section('chart')
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script>

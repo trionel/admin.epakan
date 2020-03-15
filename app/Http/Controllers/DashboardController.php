@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Kategori;
 use App\Transaksi;
+use App\Pesanan;
+use App\Pengguna;
 
 use App\User;
 
@@ -22,6 +24,7 @@ class DashboardController extends Controller
         $tanggal_hari_ini = date('Y-m-d');
         $bulan_ini = date('m');
         $tahun_ini = date('Y');
+        $pesanan;
 
         $pemasukan_hari_ini = Transaksi::where('jenis','Pemasukan')
                                 ->whereDate('tanggal',$tanggal_hari_ini)
@@ -158,6 +161,12 @@ class DashboardController extends Controller
         $kat[4]=DB::table('transaksi')->where('kategori_id','4')->count();
         $kat[5]=DB::table('transaksi')->where('kategori_id','5')->count();
 
+        //Pesanan
+        $pesanan = Pesanan::all();
+
+        //Pengguna
+        $pengguna = Pengguna::all();
+
         return view('dashboard',
             [
                 'pemasukan_hari_ini' => $pemasukan_hari_ini, 
@@ -193,6 +202,8 @@ class DashboardController extends Controller
                 'tk11' => $tk11,
                 'tk12' => $tk12,
                 'kat'=>$kat,
+                'pesanan'=>$pesanan,
+                'pengguna'=>$pengguna,
             ]
         );
     }

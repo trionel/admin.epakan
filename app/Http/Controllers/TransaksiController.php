@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Kategori;
 use App\Transaksi;
 use App\Pesanan;
+use App\DetailPesanan;
 
 class TransaksiController extends Controller
 {
@@ -118,7 +119,7 @@ class TransaksiController extends Controller
 
     public function pesanan()
     {
-        $pesanan = Pesanan::orderBy('id_pesanan','desc')->paginate(5);
+        $pesanan = Pesanan::orderBy('id_pesanan','desc')->paginate(10);
         // $pesanan = Pesanan::all(); 
         return view('transaksi.pesanan',['pesanan' => $pesanan]); 
     }
@@ -161,11 +162,6 @@ class TransaksiController extends Controller
         return redirect('pesanan');
     }
 
-    public function detail_pesanan($id_pesanan)
-    {
-        return view('transaksi.detail_pesanan',['pesanan' => $pesanan]); 
-    }
-
     public function cari_pesanan(Request $data) 
     { 
         // keyword pencarian 
@@ -181,4 +177,36 @@ class TransaksiController extends Controller
         // passing data transaksi ke view transaksi.blade.php 
         return view('transaksi.pesanan',['pesanan' => $pesanan]); 
     }
+
+    public function detail_pesanan($id_pesanan)
+    {
+        $detail_pesanan = DetailPesanan::where('id_pesanan',$id_pesanan)->get();
+        return view('transaksi.pesanan_detail',[
+            'detail_pesanan' => $detail_pesanan,
+            'id_pesanan' => $id_pesanan,
+            ]); 
+    }
+
+    public function detail_edit($id_detail)
+    {
+        $detail_pesanan = DetailPesanan::find($id_detail); 
+        
+        return view('transaksi.detail_edit',['detail_pesanan' => $detail_pesanan]);
+    }
+
+    public function detail_update($id_detail, Request $data)
+    {
+        $data->validate([
+            'status' => 'required'
+        ]);
+        
+        $detail_pesanan = DetailPesanan::where('id_detail',$id_detail)->first();
+
+        
+        $detail_pesanan->status = $data->status;
+
+        $detail_pesanan->save();
+
+        return redirect('pesanan');
+    } 
 }

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    Status Pembayaran
+    Status Pesanan
 @endsection
 @section('content')
 <div class="container">
@@ -8,12 +8,12 @@
         <div class="col-md-8"> 
  
             <div class="card"> 
-                <div class="card-header"> Ubah Status Pembayaran
+                <div class="card-header"> Ubah Status Pesanan
                     <a href="{{ url('/pesanan') }}" class="float-right btn btn-sm btn-primary">Kembali</a>
                 </div>
                 <div class="card-body">
 
-                    <form method="post" action="{{ url('/pesanan/pesanan_update/'.$pesanan->id_pesanan) }}">
+                    <form method="post" action="{{ url('/pesanan/detail_update/'.$detail_pesanan->id_detail) }}">
 
                         @csrf
 
@@ -24,8 +24,10 @@
                             <label>Status</label>
                             <select class="form-control" name="status">
                                 <option value="">- Pilih Staus</option>
-                                <option <?php if($pesanan->belum == "belum"){ echo "selected='selected'"; } ?> value="belum">Belum Lunas</option>
-                                <option <?php if($pesanan->belum == "lunas"){ echo "selected='selected'"; } ?> value="lunas">Lunas</option>
+                                <option <?php if($detail_pesanan->belum == "belum bayar"){ echo "selected='selected'"; } ?> value="belum bayar">Belum dibayar</option>
+                                <option <?php if($detail_pesanan->belum == "diproses"){ echo "selected='selected'"; } ?> value="diproses">Diproses</option>
+                                <option <?php if($detail_pesanan->belum == "dikirim"){ echo "selected='selected'"; } ?> value="dikirim">Dikirim</option>
+                                <option <?php if($detail_pesanan->belum == "diterima"){ echo "selected='selected'"; } ?> value="diterima">Diterima</option>
                             </select>
                             {{-- @if($errors->has('pesanan')) 
                                 <span class="text-danger"> 

@@ -55,6 +55,15 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect"><i
+                            class="feather-bar-chart-2"></i><span>Saldo</span></a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ url('/saldo') }}">Saldo Masuk</a></li>
+                        <li><a href="{{ url('/pencairan') }}">Pencairan Saldo</a></li>
+                    </ul>
+                </li>
+
                 <li class="menu-title">More</li>
 
                 <li>

@@ -10,4 +10,10 @@ class Pesanan extends Model
     protected $primaryKey = 'id_pesanan';
 
     protected $keyType = 'string';
+
+    public function pesanan_detail()
+    {
+        // 1 kategori bisa memiliki banyak transaksi
+        return $this->hasOne('App\DetailPesanan');
+    }
 }

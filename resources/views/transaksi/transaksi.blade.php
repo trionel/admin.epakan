@@ -85,7 +85,7 @@
                                 <td class="text-center"> 
                                     <a href="{{ url('/transaksi/edit/'.$t->id) }}" class="btn btn-sm btn-warning">Edit</a> 
                                     {{-- <a href="{{ url('/transaksi/hapus/'.$t->id) }}" class="btn btn-sm btn-danger">Hapus</a>  --}}
-                                <a href="" class="btn btn-sm btn-danger yu" transaksi-id="{{$t->id}}">Hapus</a> 
+                                <a href="{{ url('/transaksi/hapus/'.$t->id) }}" class="btn btn-sm btn-danger yu" transaksi-id="{{$t->id}}">Hapus</a> 
                                 </td> 
                             </tr> 
                             @endforeach 
@@ -102,23 +102,27 @@
 @endsection
 @section('script')
 <script type="text/javascript">
-    $('.yu').click(function(){
-        var transaksi_id = $(this).attr('transaksi-id');
-        swal({
-            title: "Are you sure?",
-            text: "Once deleted, you will not be able to recover this imaginary file!",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-            })
-            .then((willDelete) => {
-            if (willDelete) {
-                window.location = "/transaksi/hapus/{id}";
-                swal("Poof! Your imaginary file has been deleted!", {
-                icon: "success",
-                });
-            } 
-            });
+    $(document).on("click", ".yu", function (e) {
+          var link = $(this).attr("href"); // "get" the intended link in a var
+          e.preventDefault();
+          Swal.fire({
+            title: 'Yakin ingin menghapus?',
+            text: "Data transaksi akan terhapus!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, Hapus!'
+          }).then((result) => {
+            if (result.value) {
+              document.location.href = link;
+              Swal.fire(
+                'Terhapus!',
+                'Data sudah terhapus.',
+                'success'
+              )
+            }
+          })
         });
     </script>
 @endsection

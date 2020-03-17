@@ -38,3 +38,18 @@
 </div>
 </div>
 @endsection
+{{-- @section('script')
+    <script type="text/javascript">
+      $(document).on("click", ".save", function (e) {
+          var link = $(this).attr("href"); // "get" the intended link in a var
+          e.preventDefault();
+          Swal.fire({
+            position: 'top-end',
+            type: 'success',
+            title: 'Your work has been saved',
+            showConfirmButton: false,
+            timer: 1500
+          })
+      });
+    </script>
+@endsection --}}

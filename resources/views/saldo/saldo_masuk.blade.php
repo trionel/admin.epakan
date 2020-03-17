@@ -8,8 +8,8 @@
     <div class="col-xl-8">
         <div class="card">
           <div class="card-header">
-            <b>Data Saldo Masuk</b>
-          <a href = "" class="float-right btn btn-sm btn-primary">Tambah</a>
+            <h4>Data Saldo Masuk</h4>
+          {{-- <a href = "" class="float-right btn btn-sm btn-primary">Tambah</a> --}}
           {{ csrf_field() }}
           <div>
         </div>

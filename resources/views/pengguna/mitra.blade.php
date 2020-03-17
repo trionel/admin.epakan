@@ -39,7 +39,7 @@
                         <td>{{ $m->nama }}</td>
                         <td>{{ $m->nik }}</td>
                         <td>
-                          <img src="{{ $m->foto_ktp }}" alt="">
+                          <img src="http://marketplace.epakan.id/uploads/file/{{ $m->foto_ktp }}" alt="">
                         </td>
                         <td>{{ $m->tipe }}</td>
                         <td>

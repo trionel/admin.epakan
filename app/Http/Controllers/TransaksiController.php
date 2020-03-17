@@ -168,7 +168,12 @@ class TransaksiController extends Controller
         $cari = $data->cari; 
          // mengambil data transaksi 
         $pesanan = Pesanan::orderBy('id_pesanan','desc') 
-        ->where('status','like',"%".$cari."%")  
+        ->where('id_pesanan','like',"%".$cari."%")
+        ->orWhere('ongkir','like',"%".$cari."%")
+        ->orWhere('harga','like',"%".$cari."%")
+        ->orWhere('total_bayar','like',"%".$cari."%")
+        ->orWhere('id_pengguna','like',"%".$cari."%")          
+        ->orWhere('status','like',"%".$cari."%")  
         ->paginate(5); 
 
         // menambahkan keyword pencarian ke data transaksi 

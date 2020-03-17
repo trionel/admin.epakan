@@ -23,9 +23,9 @@
 
                             <label>Status</label>
                             <select class="form-control" name="status">
-                                <option value="">- Pilih Staus</option>
-                                <option <?php if($pencairan->status == "belum"){ echo "selected='selected'"; } ?> value="belum">Belum Cair</option>
-                                <option <?php if($pencairan->status == "cair"){ echo "selected='selected'"; } ?> value="cair">Sudah Cair</option>
+                                <option value="">- Pilih Status</option>
+                                <option <?php if($pencairan->status == "belum cair"){ echo "selected='selected'"; } ?> value="belum cair">Belum Cair</option>
+                                <option <?php if($pencairan->status == "sudah cair"){ echo "selected='selected'"; } ?> value="sudah cair">Sudah Cair</option>
                             </select>
                             
                         </div>

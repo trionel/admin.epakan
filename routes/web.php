@@ -67,6 +67,9 @@ Route::group(['middleware'=>'auth'], function(){
 
     //Saldo
     Route::get('/saldo', 'SaldoController@saldo');
+    Route::get('/saldo/edit/{id}', 'SaldoController@edit_saldo');
+    Route::put('/saldo/update/{id}', 'SaldoController@update_saldo');
+    Route::get('/saldo/hapus/{id}', 'SaldoController@hapus_saldo');
     Route::get('/pencairan', 'SaldoController@pencairan');
     Route::get('/pencairan/cairkan/{id}', 'SaldoController@cairkan');
     Route::put('/pencairan/cairkan_proses/{id}', 'SaldoController@cairkan_proses');

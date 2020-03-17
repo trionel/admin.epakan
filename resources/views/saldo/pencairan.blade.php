@@ -15,6 +15,14 @@
         </div>
       </div>
       <div class="card-body">
+        @if($notif = Session::has('edit'))
+          <div class="alert alert-info">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>{{ $notif }}</strong>
+            {{ Session::get('edit') }}
+          </div>
+          @endif
+          
         @if($notif = Session::has('hapus'))
           <div class="alert alert-danger">
             <button type="button" class="close" data-dismiss="alert">×</button>

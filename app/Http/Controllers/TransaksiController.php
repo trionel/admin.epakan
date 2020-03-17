@@ -126,7 +126,7 @@ class TransaksiController extends Controller
 
     public function pesanan_edit($id_pesanan)
     {
-         // mengambil data transaksi berdasarkan id 
+         // mengambil data pesanan berdasarkan id pesanan 
         $pesanan = Pesanan::find($id_pesanan); 
         
         return view('transaksi.pesanan_edit',['pesanan' => $pesanan]); 

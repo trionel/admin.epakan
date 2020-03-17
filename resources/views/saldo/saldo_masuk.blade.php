@@ -15,6 +15,19 @@
         </div>
       </div>
       <div class="card-body">
+        @if(Session::has('edit')) 
+                    <div class="alert alert-primary"> 
+                        <button type="button" class="close" data-dismiss="alert">×</button> 
+                        {{ Session::get('edit') }} 
+                    </div> 
+                    @endif 
+
+                    @if(Session::has('hapus')) 
+                    <div class="alert alert-danger"> 
+                        <button type="button" class="close" data-dismiss="alert">×</button> 
+                        {{ Session::get('hapus') }} 
+                    </div> 
+                    @endif 
         <div class="table-responsive">
             <table class="table mb-0">
           <thead>
@@ -37,8 +50,8 @@
                 <td>{{ $s->id_pengguna }}</td>
                 <td>{{ $s->saldo }}</td>
                 <td class="text-center"> 
-                    <a href="" class="btn btn-sm btn-primary">Edit</a> 
-                    {{-- <a href="{{ url('/kategori/hapus/'.$k->id) }}" class="btn btn-sm btn-danger">Hapus</a>  --}}
+                    <a href="{{ url('/saldo/edit/'.$s->id) }}" class="btn btn-sm btn-primary">Edit</a> 
+                    <a href="{{ url('/saldo/hapus/'.$s->id) }}" class="btn btn-sm btn-danger salpus">Hapus</a> 
                 </td> 
                 </tr>
             @endforeach
@@ -50,25 +63,28 @@
         </div>
 @endsection
 @section('script')
-<script type="text/javascript">
-  $('.ye').click(function(){
-      var kategori_id = $(this).attr('kategori-id');
-      swal({
-        title: "Are you sure?",
-        text: "Once deleted, you will not be able to recover this imaginary file!",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
-      })
-      .then((willDelete) => {
-        if (willDelete) {
-          swal("Poof! Your imaginary file has been deleted!", {
-            icon: "success",
-          });
-        } else {
-          swal("Your imaginary file is safe!");
-        }
-      });
-      });
-  </script>
-@endsection
+      <script type="text/javascript">
+        $(document).on("click", ".salpus", function (e) {
+          var link = $(this).attr("href"); // "get" the intended link in a var
+          e.preventDefault();
+          Swal.fire({
+            title: 'Yakin ingin menghapus?',
+            text: "Data kategori akan terhapus!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, Hapus!'
+          }).then((result) => {
+            if (result.value) {
+              document.location.href = link;
+              Swal.fire(
+                'Terhapus!',
+                'Data sudah terhapus.',
+                'success'
+              )
+            }
+          })
+        });
+      </script>
+      @endsection

@@ -18,6 +18,13 @@
                 </form> 
               </div> 
               <div class="card-body">
+                @if($notif = Session::has('hapus'))
+          <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>{{ $notif }}</strong>
+            {{ Session::get('hapus') }}
+          </div>
+          @endif
                 <table id="data" class="table table-condensed table-hover table-bordered table-striped">
                   <thead>
                     <tr>
@@ -48,7 +55,10 @@
                         <td>
                           <img src="http://marketplace.epakan.id/uploads/file/{{ $m->foto_cppb }}" alt=""></td>
                         <td>{{ $m->foto_sertifikat }}</td> --}}
-                        <td><a href="{{url ('mitra/detail_mitra', $m->id) }}" class="btn btn-sm btn-primary">Detail</a></td>
+                        <td class="text-center">
+                          <a href="{{url ('mitra/detail_mitra', $m->id) }}" class="btn btn-sm btn-primary">Detail</a>
+                          <a href="{{url ('mitra/hapus_mitra', $m->id) }}" class="btn btn-sm btn-danger hapmit">Hapus</a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -60,3 +70,29 @@
     </div>
 </div>
 @endsection
+@section('script')
+      <script type="text/javascript">
+        $(document).on("click", ".hapmit", function (e) {
+          var link = $(this).attr("href"); // "get" the intended link in a var
+          e.preventDefault();
+          Swal.fire({
+            title: 'Yakin ingin menghapus?',
+            text: "Data mitra akan terhapus!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, Hapus!'
+          }).then((result) => {
+            if (result.value) {
+              document.location.href = link;
+              Swal.fire(
+                'Terhapus!',
+                'Data sudah terhapus.',
+                'success'
+              )
+            }
+          })
+        });
+      </script>
+      @endsection

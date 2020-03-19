@@ -80,7 +80,7 @@ class SaldoController extends Controller
         
         $pencairan->save();
 
-        return redirect('pencairan')->with("edit","Saldo pencairan berhasil dicairkan"); 
+        return redirect('pencairan')->with("edit","Saldo pengguna dengan ID {$pencairan->id_pengguna} dengan pencairan sebesar {$pencairan->saldo} berhasil dicairkan"); 
     }
 
     public function hapus_cair($id)

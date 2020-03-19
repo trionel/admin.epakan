@@ -49,7 +49,7 @@
                 <tr>
                 <td>{{ $no++ }}</td>
                 <td>{{ $p->id_pengguna }}</td>
-                <td>{{ $p->saldo }}</td>
+                <td>{{ "Rp.".number_format($p->saldo).",-" }} </td>
                 <td>{{ $p->status }}</td>
                 <td class="text-center"> 
                     <a href="{{ url('/pencairan/cairkan/'.$p->id) }}" class="btn btn-sm btn-primary">Cairkan</a> 

@@ -18,8 +18,16 @@ class PenggunaController extends Controller
 
     public function detail_mitra($id)
     {
-        $mitra = mitra::where('id',$id)->get();
+        $mitra = Mitra::where('id',$id)->get();
         return view('pengguna.detail_mitra',['mitra' => $mitra,]); 
+    }
+
+    public function hapus_mitra($id)
+    {
+        $mitra = Mitra::find($id);        
+        $mitra->delete(); 
+
+        return redirect('mitra')->with("hapus","Mitra {$mitra->nama} berhasil dihapus"); 
     }
 
     public function cari_mitra(Request $data) 
@@ -68,7 +76,7 @@ class PenggunaController extends Controller
         
         $pengguna->save();
 
-        return redirect('pelanggan'); 
+        return redirect('pelanggan')->with("edit","akun dengan nama {$pengguna->nama} sudah menjadi mitra");
     }
 
     public function cari_pelanggan(Request $data) 

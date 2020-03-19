@@ -48,7 +48,7 @@
                 <td>{{ $no++ }}</td>
                 <td>{{ $s->id_pesanan }}</td>
                 <td>{{ $s->id_pengguna }}</td>
-                <td>{{ $s->saldo }}</td>
+                <td>{{ "Rp.".number_format($s->saldo).",-" }} </td>
                 <td class="text-center"> 
                     <a href="{{ url('/saldo/edit/'.$s->id) }}" class="btn btn-sm btn-primary">Edit</a> 
                     <a href="{{ url('/saldo/hapus/'.$s->id) }}" class="btn btn-sm btn-danger salpus">Hapus</a> 

@@ -159,7 +159,7 @@ class TransaksiController extends Controller
             'saldo' => $saldo
             ]);
 
-        return redirect('pesanan')->with("edit","Pembayaran berhasil dikonfirmasi");
+        return redirect('pesanan')->with("edit","Pembayaran ID Pesanan : {$pesanan->id_pesanan} berhasil dikonfirmasi");
     }
 
     public function cari_pesanan(Request $data) 

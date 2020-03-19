@@ -20,7 +20,16 @@
                         {{ method_field('PUT') }}
 
                         <div class="form-group">
+                            <label>ID Pengguna</label>
+                            <input type="input" name="id_pengguna" class="form-control" value="{{ $pengguna->id }}" readonly>
+                        </div>
 
+                        <div class="form-group">
+                            <label>Nama</label>
+                            <input type="input" name="nama" class="form-control" value="{{ $pengguna->nama }}" readonly>
+                        </div>
+
+                        <div class="form-group">
                             <label>Status</label>
                             <select class="form-control" name="status">
                                 <option value="">- Pilih Status</option>

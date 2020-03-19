@@ -39,7 +39,7 @@ class SaldoController extends Controller
 
         $saldo->save();
 
-        return redirect('saldo')->with("edit","Saldo berhasil diubah"); 
+        return redirect('saldo')->with("edit","Saldo dengan ID Pesanan : {$saldo->id_pesanan} berhasil diubah"); 
     }
 
     public function hapus_saldo($id)
@@ -88,6 +88,6 @@ class SaldoController extends Controller
         $pencairan = Pencairan::find($id);        
         $pencairan->delete(); 
 
-        return redirect('pencairan')->with("hapus","Data pencairan berhasil dihapus"); 
+        return redirect('pencairan')->with("hapus","Data pencairan ID {$pencairan->id} sebesar Rp.{$pencairan->saldo} berhasil dihapus"); 
     }
 }

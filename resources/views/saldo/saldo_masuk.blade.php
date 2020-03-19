@@ -69,7 +69,7 @@
           e.preventDefault();
           Swal.fire({
             title: 'Yakin ingin menghapus?',
-            text: "Data kategori akan terhapus!",
+            text: "Data saldo akan terhapus!",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

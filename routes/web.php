@@ -56,6 +56,7 @@ Route::group(['middleware'=>'auth'], function(){
 
     //Pengguna ePakan
     Route::get('/mitra', 'PenggunaController@mitra');
+    Route::get('/mitra/detail_mitra/{id}', 'PenggunaController@detail_mitra');
     Route::get('/pelanggan', 'PenggunaController@pelanggan');
     Route::get('/mitra/cari', 'PenggunaController@cari_mitra');
     Route::get('/pelanggan/cari', 'PenggunaController@cari_pelanggan');

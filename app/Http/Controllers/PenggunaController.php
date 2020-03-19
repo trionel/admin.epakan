@@ -16,6 +16,12 @@ class PenggunaController extends Controller
     	return view('pengguna.mitra', ['mitra' => $mitra]);
     }
 
+    public function detail_mitra($id)
+    {
+        $mitra = mitra::where('id',$id)->get();
+        return view('pengguna.detail_mitra',['mitra' => $mitra,]); 
+    }
+
     public function cari_mitra(Request $data) 
     { 
         // keyword pencarian 

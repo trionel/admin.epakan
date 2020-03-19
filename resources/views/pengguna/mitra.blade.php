@@ -24,11 +24,7 @@
                       <th width="100px">ID Mitra</th>
                       <th width="100px">Nama</th>
                       <th>NIK</th>
-                      <th>Foto KTP</th>
                       <th>Tipe</th>
-                      <th>Foto Peternakan</th>
-                      <th>Foto CPPB</th>
-                      {{-- <th>Foto Sertifikat</th> --}}
                       <th>Aksi</th>
                     </tr>
                   </thead>
@@ -38,16 +34,16 @@
                         <td>{{ $m->id_pengguna }}</td>
                         <td>{{ $m->nama }}</td>
                         <td>{{ $m->nik }}</td>
-                        <td>
+                        <td>{{ $m->tipe }}</td>
+                        {{-- <td>
                           <img src="http://marketplace.epakan.id/uploads/file/{{ $m->foto_ktp }}" alt="">
                         </td>
-                        <td>{{ $m->tipe }}</td>
                         <td>
-                          <img src="{{ $m->foto_peternakan }}" alt=""></td>
+                          <img src="http://marketplace.epakan.id/uploads/file/{{ $m->foto_peternakan }}" alt=""></td>
                         <td>
-                          <img src="{{ $m->foto_cppb }}" alt=""></td>
-                        {{-- <td>{{ $m->foto_sertifikat }}</td> --}}
-                        <td><a href="{{url ('mitra/lihat', $m->id) }}" class="btn btn-sm btn-primary">Lihat</a></td>
+                          <img src="http://marketplace.epakan.id/uploads/file/{{ $m->foto_cppb }}" alt=""></td>
+                        <td>{{ $m->foto_sertifikat }}</td> --}}
+                        <td><a href="{{url ('mitra/detail_mitra', $m->id) }}" class="btn btn-sm btn-primary">Detail</a></td>
                     </tr>
                     @endforeach
                 </tbody>

@@ -212,8 +212,7 @@
                     </div> <!-- end card-body-->
                 </div> <!-- end card-->
             </div>
-@endsection
-<script src="http://maps.googleapis.com/maps/api/js"></script>
+            <script src="http://maps.googleapis.com/maps/api/js"></script>
 
 <script type="text/javascript">
 function initialize() {
@@ -235,10 +234,12 @@ function initialize() {
     google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt6a6dy99jZcyrlIe7OghOsZ0khO1x4O8&libraries=places" async defer> </script>
+@endsection
+
 
 @section('chart')
     <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script>
+    <script type="text/javascript">
         Highcharts.chart('coba', {
     chart: {
         type: 'column'
@@ -298,7 +299,7 @@ function initialize() {
 });
     </script>
 
-<script>
+<script type="text/javascript">
     Highcharts.chart('kategori', {
     chart: {
         plotBackgroundColor: null,

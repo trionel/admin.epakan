@@ -20,7 +20,16 @@
                         {{ method_field('PUT') }}
 
                         <div class="form-group">
+                            <label>ID Pesanan</label>
+                            <input type="input" name="id_pengguna" class="form-control" value="{{ $pencairan->id_pengguna }}" readonly>
+                        </div>
 
+                        <div class="form-group">
+                            <label>Saldo</label>
+                            <input type="nominal" name="saldo" class="form-control" value="{{ $pencairan->saldo }}" readonly>
+                        </div>
+
+                        <div class="form-group">
                             <label>Status</label>
                             <select class="form-control" name="status">
                                 <option value="">- Pilih Status</option>

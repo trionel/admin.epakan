@@ -22,6 +22,12 @@ Pesanan
           </form> 
         </div> 
         <div class="card-body">
+          @if(Session::has('edit')) 
+                    <div class="alert alert-primary"> 
+                        <button type="button" class="close" data-dismiss="alert">×</button> 
+                        {{ Session::get('edit') }} 
+                    </div> 
+                    @endif 
           <div class="table-responsive">
             <table class="table table-striped mb-0">
             <thead>

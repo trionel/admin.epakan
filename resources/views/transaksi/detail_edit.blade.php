@@ -20,10 +20,14 @@
                         {{ method_field('PUT') }}
 
                         <div class="form-group">
+                            <label>ID Pesanan</label>
+                            <input type="input" name="id_pesanan" class="form-control" value="{{ $detail_pesanan->id_pesanan }}" readonly>
+                        </div>
 
+                        <div class="form-group">
                             <label>Status</label>
                             <select class="form-control" name="status">
-                                <option value="">- Pilih Staus</option>
+                                <option value="">- Pilih Status</option>
                                 <option <?php if($detail_pesanan->belum == "belum bayar"){ echo "selected='selected'"; } ?> value="belum bayar">Belum dibayar</option>
                                 <option <?php if($detail_pesanan->belum == "diproses"){ echo "selected='selected'"; } ?> value="diproses">Diproses</option>
                                 <option <?php if($detail_pesanan->belum == "dikirim"){ echo "selected='selected'"; } ?> value="dikirim">Dikirim</option>

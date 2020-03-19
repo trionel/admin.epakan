@@ -21,6 +21,7 @@
                 <table id="data" class="table table-condensed table-hover table-bordered table-striped">
                   <thead>
                     <tr>
+                      <th>#</th>
                       <th width="100px">ID Mitra</th>
                       <th width="100px">Nama</th>
                       <th>NIK</th>
@@ -29,8 +30,12 @@
                     </tr>
                   </thead>
                   <tbody id="data">
+                    @php
+                $no = 1;
+                @endphp
                     @foreach($mitra as $m)
                     <tr>
+                      <td>{{ $no++ }}</td>
                         <td>{{ $m->id_pengguna }}</td>
                         <td>{{ $m->nama }}</td>
                         <td>{{ $m->nik }}</td>

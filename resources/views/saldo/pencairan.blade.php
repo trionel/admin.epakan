@@ -9,7 +9,7 @@
         <div class="card">
           <div class="card-header">
             <b>Data Pencairan Saldo</b>
-          <a href = "" class="float-right btn btn-sm btn-primary">Tambah</a>
+          {{-- <a href = "" class="float-right btn btn-sm btn-primary">Tambah</a> --}}
           {{ csrf_field() }}
           <div>
         </div>

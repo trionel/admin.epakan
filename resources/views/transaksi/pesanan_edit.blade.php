@@ -12,7 +12,12 @@
                     <a href="{{ url('/pesanan') }}" class="float-right btn btn-sm btn-primary">Kembali</a>
                 </div>
                 <div class="card-body">
-
+                    @if(Session::has('edit')) 
+                    <div class="alert alert-primary"> 
+                        <button type="button" class="close" data-dismiss="alert">×</button> 
+                        {{ Session::get('edit') }} 
+                    </div> 
+                    @endif 
                     <form method="post" action="{{ url('/pesanan/pesanan_update/'.$pesanan->id_pesanan) }}">
 
                         @csrf
@@ -20,10 +25,19 @@
                         {{ method_field('PUT') }}
 
                         <div class="form-group">
+                            <label>ID Pesanan</label>
+                            <input type="input" name="id_pesanan" class="form-control" value="{{ $pesanan->id_pesanan }}" readonly>
+                        </div>
 
+                        <div class="form-group">
+                            <label>Total Bayar</label>
+                            <input type="input" name="id_pengguna" class="form-control" value="{{ $pesanan->total_bayar }}" readonly>
+                        </div>
+
+                        <div class="form-group">
                             <label>Status</label>
                             <select class="form-control" name="status">
-                                <option value="">- Pilih Staus</option>
+                                <option value="">- Pilih Status</option>
                                 <option <?php if($pesanan->belum == "belum"){ echo "selected='selected'"; } ?> value="belum">Belum Lunas</option>
                                 <option <?php if($pesanan->belum == "lunas"){ echo "selected='selected'"; } ?> value="lunas">Lunas</option>
                             </select>

@@ -162,7 +162,7 @@ class DashboardController extends Controller
         $kat[5]=DB::table('transaksi')->where('kategori_id','5')->count();
 
         //Pesanan
-        $pesanan = Pesanan::all();
+        $pesanan = Pesanan::orderBy('id_pesanan','desc')->paginate(6);
 
         //Pengguna
         $pengguna = Pengguna::all();

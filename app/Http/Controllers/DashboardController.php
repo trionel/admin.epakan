@@ -25,6 +25,7 @@ class DashboardController extends Controller
         $bulan_ini = date('m');
         $tahun_ini = date('Y');
         $pesanan;
+        $pesanann;
 
         $pemasukan_hari_ini = Transaksi::where('jenis','Pemasukan')
                                 ->whereDate('tanggal',$tanggal_hari_ini)
@@ -160,9 +161,11 @@ class DashboardController extends Controller
         $kat[3]=DB::table('transaksi')->where('kategori_id','3')->count();
         $kat[4]=DB::table('transaksi')->where('kategori_id','4')->count();
         $kat[5]=DB::table('transaksi')->where('kategori_id','5')->count();
+        $kat[6]=DB::table('transaksi')->where('kategori_id','8')->count();
 
         //Pesanan
-        $pesanan = Pesanan::orderBy('id_pesanan','desc')->paginate(6);
+        $pesanann = Pesanan::all();
+        $pesanan = Pesanan::orderBy('id_pesanan','desc')->offset(0)->limit(7)->get();
 
         //Pengguna
         $pengguna = Pengguna::all();
@@ -204,6 +207,7 @@ class DashboardController extends Controller
                 'kat'=>$kat,
                 'pesanan'=>$pesanan,
                 'pengguna'=>$pengguna,
+                'pesanann'=>$pesanann,
             ]
         );
     }

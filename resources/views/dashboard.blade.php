@@ -83,7 +83,7 @@
                         </div>
                         <div class="row d-flex align-items-center mb-0">
                             <div class="col-8">
-                            <h4 class="mb-0 text-white">{{count($pesanan)}}</h4>
+                            <h4 class="mb-0 text-white">{{count($pesanann)}}</h4>
                             </div>
                             <div class="icon">
                                 <i class="fas fa-clipboard-list text-white fa-3x"></i>
@@ -208,8 +208,8 @@
                 <div class="card">
                     <div class="card-body">
                         {{ csrf_field() }}
-                        <h4 class="card-title">Pesanan Terakhir</h4>
-                        <p class="card-subtitle mb-4">Periode pesanan 1 Maret sampai 31</p>
+                        <h4 class="card-title">Pesanan Terbaru</h4>
+                        <p class="card-subtitle mb-4">Periode pesanan 1 bulan terakhir</p>
                         <div class="table-responsive">
                             <table class="table table-centered table-hover table-xl mb-0" id="recent-orders">
                                 <thead>
@@ -247,7 +247,7 @@
               @endforeach
             </tbody>
           </table>
-          {{ $pesanan->links() }}
+          {{-- {{ $pesanan->links() }} --}}
                         </div>
 
         
@@ -394,6 +394,9 @@ function initialize() {
         }, {
             name: 'Lain-lain',
             y: {{$kat[5]}}
+        }, {
+            name: 'Pencairan',
+            y: {{$kat[6]}}
         }]
     }]
 });

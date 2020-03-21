@@ -69,7 +69,8 @@
 										<option value="02">Penggajian</option>
 										<option value="03">Pembayaran</option>
 										<option value="04">Pembelian</option>
-										<option value="05">Lain-lain</option>
+                                        <option value="05">Lain-lain</option>
+                                        <option value="08">Pencairan</option>
                                     </select>
                                 </div>
                             </div>

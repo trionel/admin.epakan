@@ -74,6 +74,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-xl-3">
+                <a href="{{url ('pesanan')}}">
                 <div class="card bg-primary border-primary">
                     <div class="card-body">
                         <div class="mb-4">
@@ -90,6 +91,7 @@
                         </div>
                     </div>
                 </div>
+            </a>
             </div>
             <div class="col-md-6 col-xl-3">
                 <div class="card bg-warning border-warning">
@@ -158,6 +160,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-xl-3">
+                <a href="{{url ('pelanggan')}}">
                 <div class="card bg-dark border-dark">
                     <div class="card-body">
                         <div class="mb-4">
@@ -175,6 +178,7 @@
                         </div>
                     </div>
                 </div>
+            </a>
             </div>
             <div class="col-xl-12">
                 <div class="card">
@@ -196,6 +200,55 @@
                         <p class="card-subtitle mb-4">Kategori pengeluaran ePakan.</p>
 
                         <div id="kategori" class="morris-chart"></div>
+        
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+            </div><!-- end col -->
+            <div class="col-xl-6">
+                <div class="card">
+                    <div class="card-body">
+                        {{ csrf_field() }}
+                        <h4 class="card-title">Pesanan Terakhir</h4>
+                        <p class="card-subtitle mb-4">Periode pesanan 1 Maret sampai 31</p>
+                        <div class="table-responsive">
+                            <table class="table table-centered table-hover table-xl mb-0" id="recent-orders">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>ID Pesanan</th>
+                                        <th>ID Pengguna</th>
+                                        <th>Ongkir</th>
+                                        <th>Harga</th>
+                                        <th>Total Bayar</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @php
+                  $no = 1;
+              @endphp
+              @foreach($pesanan as $p)
+              <tr>
+                <td>{{ $no++ }}</td>
+                <td>{{ $p->id_pesanan }}</td>
+                <td>{{ $p->id_pengguna }}</td>
+                <td>{{ $p->ongkir }}</td>
+                <td>{{ $p->harga }}</td>
+                <td>{{ $p->total_bayar }}</td>
+                <td>
+                  @if ($p->status == "belum")
+                  <span class="badge badge-soft-danger p-2">{{ $p->status }}</span>
+                  @endif
+                  @if ($p->status == "lunas")
+                  <span class="badge badge-soft-success p-2">{{ $p->status }}</span>
+                  @endif
+                  </td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+                        </div>
+
         
                     </div> <!-- end card-body-->
                 </div> <!-- end card-->

@@ -50,7 +50,12 @@
                 <td>{{ $no++ }}</td>
                 <td>{{ $p->id_pengguna }}</td>
                 <td>{{ "Rp.".number_format($p->saldo).",-" }} </td>
-                <td>{{ $p->status }}</td>
+                <td>@if ($p->status == "belum cair")
+                  <span class="badge badge-soft-danger p-2">{{ $p->status }}</span>
+                  @endif
+                  @if ($p->status == "sudah cair")
+                  <span class="badge badge-soft-success p-2">{{ $p->status }}</span>
+                  @endif</td>
                 <td class="text-center"> 
                     <a href="{{ url('/pencairan/cairkan/'.$p->id) }}" class="btn btn-sm btn-primary">Cairkan</a> 
                     <a href="{{ url('/pencairan/hapus_cair/'.$p->id) }}" class="btn btn-sm btn-danger hapca">Hapus</a> 

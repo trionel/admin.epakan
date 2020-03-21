@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Saldo;
 use App\Pencairan;
 use App\Pengguna;
+use App\Transaksi;
 
 class SaldoController extends Controller
 {
@@ -79,6 +80,19 @@ class SaldoController extends Controller
         $pencairan->status = $data->status; 
         
         $pencairan->save();
+
+        $trans = Transaksi::orderBy('id','desc')->first();
+            
+        $saldo = $trans->saldo - $pencairan->saldo;
+
+        Transaksi::insert([ 
+            'tanggal' => date('Y-m-d H:i:s'),
+            'jenis' => 'pengeluaran', 
+            'kategori_id' => '8', 
+            'nominal' => $pencairan->saldo, 
+            'keterangan' => 'Pencairan', 
+            'saldo' => $saldo
+            ]);
 
         return redirect('pencairan')->with("edit","Saldo pengguna dengan ID {$pencairan->id_pengguna} dengan pencairan sebesar {$pencairan->saldo} berhasil dicairkan"); 
     }

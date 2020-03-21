@@ -32,7 +32,7 @@ class KategoriController extends Controller
             'kategori' => $kategori
         ]);
 
-        Session::flash("sukses","Kategori berhasil tersimpan");
+        Session::flash("sukses","Kategori berhasil ditambah");
 
         return redirect ('kategori');
     }

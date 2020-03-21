@@ -57,7 +57,12 @@
                         <td>{{ $m->daerah }}</td>
                         <td>{{ $m->alamat }}</td>
                         <td>{{ $m->kode_verifikasi }}</td>
-                        <td>{{ $m->status }}</td>
+                        <td>@if ($m->status == 0)
+                          <span class="badge badge-soft-danger p-2">{{ $m->status }}</span>
+                          @endif
+                          @if ($m->status == 1)
+                          <span class="badge badge-soft-success p-2">{{ $m->status }}</span>
+                          @endif</td>
                         <td><a href="{{url ('pelanggan/verifikasi', $m->id) }}" class="btn btn-sm btn-primary">Verifikasi</a></td>
                     </tr>
                     @endforeach

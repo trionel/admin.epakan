@@ -8,8 +8,8 @@
         <div class="col-md-12">
 
             <div class="card"> 
-                <div class="card-header">
-                    Filter Laporan Keuangan
+                <div class="card-header text-white bg-success">
+                <b>Filter Laporan Keuangan</b>
                 </div>
                 <div class="card-body">
 
@@ -92,8 +92,8 @@
                     <a target="_blank" href="{{ url('/laporan/excel?dari='.$dari.'&sampai='.$sampai.$print) }}" class="btn btn-space btn-success">Export Excel</a>
 
                     <br>
-                    <table class="table table-bordered mt-4">
-                        <thead>
+                    <table class="table table-condensed table-hover table-bordered">
+                        <thead class="thead-light">
                             <tr>
                                 <th class="text-center" rowspan="2" width="11%">Tanggal</th>
                                 <th class="text-center" rowspan="2" width="5%">Jenis</th>
@@ -147,7 +147,7 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td class="text-right font-weight-bold" colspan="4">TOTAL</td>
+                        <td class="text-right font-weight-bold text-white bg-dark" colspan="4">TOTAL</td>
                         <td class="text-center bg-success text-white font-weight-bold">{{ "Rp. ".number_format($total_pemasukan )." ,-"}}</td>
                         <td class="text-center bg-danger text-white font-weight-bold">{{ "Rp. ".number_format($total_pengeluaran )." ,-" }}</td>
                         <td class="text-center bg-primary text-white font-weight-bold" colspan="2">{{ "Rp. ".number_format($total_pemasukan - $total_pengeluaran)." ,-"}}</td>

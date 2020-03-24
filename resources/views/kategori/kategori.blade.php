@@ -7,9 +7,9 @@ Master Kategori
   <div class="row justify-content-center">
     <div class="col-xl-8">
       <div class="card">
-        <div class="card-header">
+        <div class="card-header text-white bg-primary">
           <b>Data Kategori</b>
-          <a href="{{ url ('/kategori/tambah') }}" class="float-right btn btn-sm btn-primary">Tambah</a>
+          <a href="{{ url ('/kategori/tambah') }}" class="float-right btn btn-sm btn-success">Tambah</a>
           {{ csrf_field() }}
           <div>
           </div>
@@ -39,8 +39,8 @@ Master Kategori
           </div>
           @endif
           <div class="table-responsive">
-            <table class="table mb-0">
-              <thead>
+            <table class="table mb-0 table-striped">
+              <thead class="thead-light">
                 <tr>
                   <th>No</th>
                   <th>Nama Kategori</th>
@@ -56,7 +56,7 @@ Master Kategori
                   <td>{{ $no++ }}</td>
                   <td>{{ $k->kategori }}</td>
                   <td class="text-center">
-                    <a href="{{ url('/kategori/edit/'.$k->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                    <a href="{{ url('/kategori/edit/'.$k->id) }}" class="btn btn-sm btn-warning">Edit</a>
                     {{-- <a href="{{ url('/kategori/hapus/'.$k->id) }}" class="btn btn-sm btn-danger">Hapus</a> --}}
                     <a href="{{ url('/kategori/hapus/'.$k->id) }}" class="btn btn-sm btn-danger text-white ye"
                       kategori-id="{{$k->id}}">Hapus</a>

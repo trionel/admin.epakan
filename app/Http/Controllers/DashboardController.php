@@ -7,6 +7,7 @@ use App\Kategori;
 use App\Transaksi;
 use App\Pesanan;
 use App\Pengguna;
+use App\Produk;
 
 use App\User;
 
@@ -26,6 +27,8 @@ class DashboardController extends Controller
         $tahun_ini = date('Y');
         $pesanan;
         $pesanann;
+        $saldo;
+        $produk;
 
         $pemasukan_hari_ini = Transaksi::where('jenis','Pemasukan')
                                 ->whereDate('tanggal',$tanggal_hari_ini)
@@ -170,6 +173,23 @@ class DashboardController extends Controller
         //Pengguna
         $pengguna = Pengguna::all();
 
+        //Saldo
+        $saldo = $seluruh_pemasukan - $seluruh_pengeluaran;
+
+        //produk
+        $produk = Produk::all();
+
+        //Pie Chart Produk
+        $prod[1]=DB::table('produk')->where('kategori','Pakan Sapi')->count();
+        $prod[2]=DB::table('produk')->where('kategori','Pakan Kuda')->count();
+        $prod[3]=DB::table('produk')->where('kategori','Pakan Domba & Kambing')->count();
+        $prod[4]=DB::table('produk')->where('kategori','Pakan Ayam')->count();
+        $prod[5]=DB::table('produk')->where('kategori','Pakan Kerbau')->count();
+        $prod[6]=DB::table('produk')->where('kategori','Suplemen')->count();
+        $prod[7]=DB::table('produk')->where('kategori','Hijauan')->count();
+        $prod[8]=DB::table('produk')->where('kategori','Bahan Mentah Pakan')->count();
+        $prod[9]=DB::table('produk')->where('kategori','Produk Peternak Binaan')->count();
+
         return view('dashboard',
             [
                 'pemasukan_hari_ini' => $pemasukan_hari_ini, 
@@ -208,6 +228,9 @@ class DashboardController extends Controller
                 'pesanan'=>$pesanan,
                 'pengguna'=>$pengguna,
                 'pesanann'=>$pesanann,
+                'saldo'=>$saldo,
+                'produk'=>$produk,
+                'prod' => $prod,
             ]
         );
     }

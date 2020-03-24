@@ -40,7 +40,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect"><i
-                            class="feather-list"></i><span>Keuangan</span></a>
+                            class="feather-dollar-sign"></i><span>Keuangan</span></a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ url('/laporan') }}">Laporan Keuangan</a></li>
                     </ul>
@@ -48,7 +48,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect"><i
-                            class="feather-bar-chart-2"></i><span>Pengguna</span></a>
+                            class="feather-users"></i><span>Pengguna</span></a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ url('/mitra') }}">Mitra ePakan</a></li>
                         <li><a href="{{ url('/pelanggan') }}">Pelanggan ePakan</a></li>
@@ -57,10 +57,18 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect"><i
-                            class="feather-bar-chart-2"></i><span>Saldo</span></a>
+                            class="feather-credit-card"></i><span>Saldo</span></a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ url('/saldo') }}">Saldo Masuk</a></li>
                         <li><a href="{{ url('/pencairan') }}">Pencairan Saldo</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect"><i
+                            class="feather-package"></i><span>Produk</span></a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ url('/produk') }}">Produk</a></li>
                     </ul>
                 </li>
 

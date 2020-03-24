@@ -7,8 +7,8 @@
     <div class="row justify-content-center"> 
     <div class="col-xl-8">
         <div class="card">
-          <div class="card-header">
-            <h4>Data Saldo Masuk</h4>
+          <div class="card-header text-white bg-success">
+            <b>Data Saldo Masuk</b>
           {{-- <a href = "" class="float-right btn btn-sm btn-primary">Tambah</a> --}}
           {{ csrf_field() }}
           <div>
@@ -30,7 +30,7 @@
                     @endif 
         <div class="table-responsive">
             <table class="table mb-0">
-          <thead>
+          <thead class="thead-light">
             <tr>
               <th >No</th>
               <th>ID Pesanan</th>
@@ -50,7 +50,7 @@
                 <td>{{ $s->id_pengguna }}</td>
                 <td>{{ "Rp.".number_format($s->saldo).",-" }} </td>
                 <td class="text-center"> 
-                    <a href="{{ url('/saldo/edit/'.$s->id) }}" class="btn btn-sm btn-primary">Edit</a> 
+                    <a href="{{ url('/saldo/edit/'.$s->id) }}" class="btn btn-sm btn-secondary">Edit</a> 
                     <a href="{{ url('/saldo/hapus/'.$s->id) }}" class="btn btn-sm btn-danger salpus">Hapus</a> 
                 </td> 
                 </tr>

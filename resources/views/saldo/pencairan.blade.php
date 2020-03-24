@@ -7,7 +7,7 @@
     <div class="row justify-content-center"> 
     <div class="col-xl-8">
         <div class="card">
-          <div class="card-header">
+          <div class="card-header text-white bg-success">
             <b>Data Pencairan Saldo</b>
           {{-- <a href = "" class="float-right btn btn-sm btn-primary">Tambah</a> --}}
           {{ csrf_field() }}
@@ -32,7 +32,7 @@
           @endif
         <div class="table-responsive">
             <table class="table mb-0">
-          <thead>
+          <thead class="thead-light">
             <tr>
               <th >No</th>
               <th>ID Pengguna</th>
@@ -57,7 +57,7 @@
                   <span class="badge badge-soft-success p-2">{{ $p->status }}</span>
                   @endif</td>
                 <td class="text-center"> 
-                    <a href="{{ url('/pencairan/cairkan/'.$p->id) }}" class="btn btn-sm btn-primary">Cairkan</a> 
+                    <a href="{{ url('/pencairan/cairkan/'.$p->id) }}" class="btn btn-sm btn-success">Cairkan</a> 
                     <a href="{{ url('/pencairan/hapus_cair/'.$p->id) }}" class="btn btn-sm btn-danger hapca">Hapus</a> 
                 </td> 
                 </tr>

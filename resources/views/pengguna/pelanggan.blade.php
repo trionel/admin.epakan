@@ -7,7 +7,8 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="card">
-              <div class="card-header">Tabel Pelanggan ePakan
+              <div class="card-header text-white bg-secondary">
+                <b>Tabel Pelanggan ePakan</b>
                   {{ csrf_field() }}
               </div>
               <br>
@@ -34,7 +35,7 @@
                 </div>
                 @endif
                 <table id="data" class="table table-condensed table-hover table-bordered table-striped">
-                  <thead>
+                  <thead class="thead-light">
                     <tr>
                       <th width="100px">ID Pengguna</th>
                       <th width="100px">Nama</th>
@@ -63,7 +64,7 @@
                           @if ($m->status == 1)
                           <span class="badge badge-soft-success p-2">{{ $m->status }}</span>
                           @endif</td>
-                        <td><a href="{{url ('pelanggan/verifikasi', $m->id) }}" class="btn btn-sm btn-primary">Verifikasi</a></td>
+                        <td><a href="{{url ('pelanggan/verifikasi', $m->id) }}" class="btn btn-sm btn-success">Verifikasi</a></td>
                     </tr>
                     @endforeach
                 </tbody>

@@ -6,9 +6,9 @@
 <div class="main-content container-fluid">
     <div class="col-xl-6">
         <div class="card">
-          <div class="card-header">
+          <div class="card-header text-white bg-primary">
             <b>Tambah Kategori</b>
-            <a href="{{ url('/kategori') }}" class="float-right btn btn-sm btn-primary">Kembali</a> 
+            <a href="{{ url('/kategori') }}" class="float-right btn btn-sm btn-warning">Kembali</a> 
         </div>
         <div class="card-body">
             <form action="{{url ('/kategori/aksi') }}" method="post" class="form-horizontal group-border-dashed">
@@ -25,7 +25,7 @@
                             @endif
                 </div>
 
-                <button type="submit" class="btn btn-primary">Simpan</button>
+                <button type="submit" class="btn btn-success">Simpan</button>
               
           </form>
         </div>

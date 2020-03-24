@@ -7,7 +7,7 @@
 <div class="main-content container-fluid">
     <div class="col-xl-6">
         <div class="card">
-          <div class="card-header">
+          <div class="card-header text-white bg-primary">
             <div class="card-title">
                 <b>Tambah Kategori</b>
             </div>
@@ -28,7 +28,7 @@
                 @endif 
               </div>
             </div>
-                <button type="submit" class="btn btn-space btn-primary">Simpan</button>
+                <button type="submit" class="btn btn-space btn-success">Simpan</button>
           </form>
         </div>
       </div>

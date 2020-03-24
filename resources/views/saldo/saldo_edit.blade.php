@@ -5,11 +5,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center"> 
-        <div class="col-md-8"> 
+        <div class="col-md-6"> 
  
             <div class="card"> 
-                <div class="card-header"> Edit Saldo
-                    <a href="{{ url('/saldo') }}" class="float-right btn btn-sm btn-primary">Kembali</a>
+                <div class="card-header text-white bg-secondary">
+                    <b>Edit Saldo</b>
+                    <a href="{{ url('/saldo') }}" class="float-right btn btn-sm btn-warning">Kembali</a>
                 </div>
                 <div class="card-body">
 
@@ -40,7 +41,7 @@
                             @endif
                         </div>
 
-                        <input type="submit" class="btn btn-primary" value="Simpan">
+                        <input type="submit" class="btn btn-success" value="Simpan">
 
                     </form>
 

@@ -5,11 +5,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center"> 
-        <div class="col-md-8"> 
+        <div class="col-md-6"> 
  
             <div class="card"> 
-                <div class="card-header"> Ubah Status Pembayaran
-                    <a href="{{ url('/pesanan') }}" class="float-right btn btn-sm btn-primary">Kembali</a>
+                <div class="card-header text-white bg-success">
+                    <b>Ubah Status Pembayaran</b>
+                    <a href="{{ url('/pesanan') }}" class="float-right btn btn-sm btn-warning">Kembali</a>
                 </div>
                 <div class="card-body">
                     @if(Session::has('edit')) 
@@ -31,7 +32,7 @@
 
                         <div class="form-group">
                             <label>Total Bayar</label>
-                            <input type="input" name="id_pengguna" class="form-control" value="{{ $pesanan->total_bayar }}" readonly>
+                            <input type="input" name="id_pengguna" class="form-control" value="{{ "Rp.".number_format($pesanan->total_bayar).",-" }}" readonly>
                         </div>
 
                         <div class="form-group">
@@ -48,7 +49,7 @@
                             @endif  --}}
                         </div>
 
-                        <input type="submit" class="btn btn-primary" value="Simpan">
+                        <input type="submit" class="btn btn-success" value="Simpan">
 
                     </form>
 

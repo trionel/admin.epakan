@@ -8,7 +8,7 @@
         <div class="row">
 
             <div class="col-md-6 col-xl-3">
-                <div class="card bg-success border-success">
+                <div class="card bg-success border-info">
                     <div class="card-body">
                         <div class="mb-4">
                             <span class="badge badge-soft-light float-right">Hari Ini</span>
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-xl-3">
+            {{-- <div class="col-md-6 col-xl-3">
                 <div class="card bg-success border-success">
                     <div class="card-body">
                         <div class="mb-4">
@@ -36,7 +36,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             {{-- <div class="col-md-6 col-xl-3">
                 <div class="card bg-success border-success">
                     <div class="card-body">
@@ -55,8 +55,24 @@
                     </div>
                 </div>
             </div> --}}
+            
             <div class="col-md-6 col-xl-3">
-                <div class="card bg-info border-info">
+                <div class="card bg-danger border-warning">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Hari Ini</span>
+                            <h5 class="card-title mb-0 text-white">Pengeluaran</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="col-8">
+                                <h4 class="card-title mb-0 text-white">{{ "Rp " . number_format($pengeluaran_hari_ini) . " ,-" }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="card bg-success border-success">
                     <div class="card-body">
                         <div class="mb-4">
                             <span class="badge badge-soft-light float-right">Keseluruhan</span>
@@ -73,74 +89,6 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-xl-3">
-                <a href="{{url ('pesanan')}}">
-                <div class="card bg-primary border-primary">
-                    <div class="card-body">
-                        <div class="mb-4">
-                            <span class="badge badge-soft-light float-right">Keseluruhan</span>
-                            <h5 class="card-title mb-0 text-white">Pesanan</h5>
-                        </div>
-                        <div class="row d-flex align-items-center mb-0">
-                            <div class="col-8">
-                            <h4 class="mb-0 text-white">{{count($pesanann)}}</h4>
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-clipboard-list text-white fa-3x"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            </div>
-            <div class="col-md-6 col-xl-3">
-                <div class="card bg-warning border-warning">
-                    <div class="card-body">
-                        <div class="mb-4">
-                            <span class="badge badge-soft-light float-right">Hari Ini</span>
-                            <h5 class="card-title mb-0 text-white">Pengeluaran</h5>
-                        </div>
-                        <div class="row d-flex align-items-center mb-4">
-                            <div class="col-8">
-                                <h4 class="card-title mb-0 text-white">{{ "Rp " . number_format($pengeluaran_hari_ini) . " ,-" }}</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-xl-3">
-                <div class="card bg-warning border-warning">
-                    <div class="card-body">
-                        <div class="mb-4">
-                            <span class="badge badge-soft-light float-right">Bulan Ini</span>
-                            <h5 class="card-title mb-0 text-white">Pengeluaran</h5>
-                        </div>
-                        <div class="row d-flex align-items-center mb-4">
-                            <div class="col-8">
-                                <h4 class="card-title mb-0 text-white">{{ "Rp " . number_format($pengeluaran_bulan_ini) . " ,-" }}</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- <div class="col-md-6 col-xl-3">
-                <div class="card bg-warning border-warning">
-                    <div class="card-body">
-                        <div class="mb-4">
-                            <span class="badge badge-soft-light float-right">Tahun Ini</span>
-                            <h5 class="card-title mb-0 text-white">Pengeluaran</h5>
-                        </div>
-                        <div class="row d-flex align-items-center mb-4">
-                            <div class="col-8">
-                                <h4 class="card-title mb-0 text-white">{{ "Rp " . number_format($pengeluaran_tahun_ini) . " ,-" }}</h4>
-                            </div>
-                            <div class="col-4 text-right">
-                                <span class="text-white-50">12.5% <i class="mdi mdi-arrow-up"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
             <div class="col-md-6 col-xl-3">
                 <div class="card bg-danger border-danger">
                     <div class="card-body">
@@ -160,6 +108,61 @@
                 </div>
             </div>
             <div class="col-md-6 col-xl-3">
+                <a href="{{url ('pesanan')}}">
+                <div class="card bg-primary border-primary">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Keseluruhan</span>
+                            <h5 class="card-title mb-0 text-white">Pesanan</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-0">
+                            <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0 text-white">{{count($pesanann)}}</h2>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-cart-plus text-white fa-3x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            </div>
+            
+            {{-- <div class="col-md-6 col-xl-3">
+                <div class="card bg-warning border-warning">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Bulan Ini</span>
+                            <h5 class="card-title mb-0 text-white">Pengeluaran</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="col-8">
+                                <h4 class="card-title mb-0 text-white">{{ "Rp " . number_format($pengeluaran_bulan_ini) . " ,-" }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+            {{-- <div class="col-md-6 col-xl-3">
+                <div class="card bg-warning border-warning">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Tahun Ini</span>
+                            <h5 class="card-title mb-0 text-white">Pengeluaran</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="col-8">
+                                <h4 class="card-title mb-0 text-white">{{ "Rp " . number_format($pengeluaran_tahun_ini) . " ,-" }}</h4>
+                            </div>
+                            <div class="col-4 text-right">
+                                <span class="text-white-50">12.5% <i class="mdi mdi-arrow-up"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+            
+            <div class="col-md-6 col-xl-3">
                 <a href="{{url ('pelanggan')}}">
                 <div class="card bg-dark border-dark">
                     <div class="card-body">
@@ -170,7 +173,7 @@
                         <div class="row d-flex align-items-center mb-0">
                             
                             <div class="col-8">
-                                <h1 class="card-title mb-0 text-white">{{count($pengguna)}}</h1>
+                                <h2 class="d-flex align-items-center mb-0 text-white">{{count($pengguna)}}</h2>
                             </div>
                             <div class="icon">
                                 <i class="fas fa-user-plus fa-3x text-white"></i>
@@ -180,27 +183,70 @@
                 </div>
             </a>
             </div>
+            <div class="col-md-6 col-xl-3">
+                <a href="{{url ('produk')}}">
+                <div class="card bg-warning border-warning">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Keseluruhan</span>
+                            <h5 class="card-title mb-0 text-white">Produk</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-0">
+                            <div class="col-8">
+                                <h2 class="d-flex align-items-center mb-0 text-white">{{count($produk)}}</h2>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-box fa-3x text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <a href="{{url ('laporan')}}">
+                <div class="card bg-info border-info">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Keseluruhan</span>
+                            <h5 class="card-title mb-0 text-white">Saldo</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-0">
+                            <div class="col-8">
+                                <h5 class="d-flex align-items-center mb-0 text-white">{{ "Rp. ".number_format($saldo)." ,-"}}</h5>
+                            </div>
+                            <div class="icon">
+                                <i class="fab fa-cc-visa fa-3x text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            </div>
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-body">
-        
                         <h4 class="card-title">Transaksi Chart</h4>
                         <p class="card-subtitle mb-4">Laporan Transaksi dalam bentuk chart</p>
-
                         <div id="coba" class="morris-chart"></div>
-        
                     </div> <!-- end card-body-->
                 </div> <!-- end card-->
             </div>
             <div class="col-xl-6">
                 <div class="card">
                     <div class="card-body">
-        
-                        <h4 class="card-title">Pie Chart</h4>
-                        <p class="card-subtitle mb-4">Kategori pengeluaran ePakan.</p>
-
+                        <h4 class="card-title">Pengeluaran ePakan</h4>
+                        {{-- <p class="card-subtitle mb-4">Kategori pengeluaran ePakan.</p> --}}
                         <div id="kategori" class="morris-chart"></div>
-        
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+            </div><!-- end col -->
+            <div class="col-xl-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Produk ePakan</h4>
+                        {{-- <p class="card-subtitle mb-4">Kategori produk ePakan.</p> --}}
+                        <div id="produk" class="morris-chart"></div>
                     </div> <!-- end card-body-->
                 </div> <!-- end card-->
             </div><!-- end col -->
@@ -220,7 +266,7 @@
                                         <th>Ongkir</th>
                                         <th>Harga</th>
                                         <th>Total Bayar</th>
-                                        <th>Status</th>
+                                        <th>Status Pembayaran</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -401,4 +447,63 @@ function initialize() {
     }]
 });
 </script>
+<script type="text/javascript">
+    Highcharts.chart('produk', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Produk ePakan berdasarkan kategori'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.y} produk</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            }
+        }
+    },
+    series: [{
+        name: 'Kategori',
+        colorByPoint: true,
+        data: [{
+            name: 'Pakan Sapi',
+            y: {{$prod[1]}}
+        }, {
+            name: 'Pakan Kuda',
+            y: {{$prod[2]}}
+        }, {
+            name: 'Pakan Domba & Kambing',
+            y: {{$prod[3]}}
+        }, {
+            name: 'Pakan Ayam',
+            y: {{$prod[4]}}
+        }, {
+            name: 'Pakan Kerbau',
+            y: {{$prod[5]}}
+        }, {
+            name: 'Suplemen',
+            y: {{$prod[6]}}
+        }, {
+            name: 'Hijauan',
+            y: {{$prod[7]}}
+        }, {
+            name: 'Bahan Mentah Pakan',
+            y: {{$prod[8]}}
+        }, {
+            name: 'Produk Peternak Binaan',
+            y: {{$prod[9]}}
+        }]
+    }]
+});
+</script>
+
 @endsection

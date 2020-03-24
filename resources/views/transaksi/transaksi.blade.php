@@ -7,9 +7,9 @@
     <div class="row justify-content-center"> 
         <div class="col-md-12"> 
             <div class="card"> 
-                <div class="card-header">
+                <div class="card-header text-white bg-primary">
                         <b>Data Transaksi</b>
-                    <a href="{{ url('/transaksi/tambah') }}" class="float-right btn btn-sm btn-primary">Input Transaksi</a>
+                    <a href="{{ url('/transaksi/tambah') }}" class="float-right btn btn-sm btn-success">Input Transaksi</a>
                 </div> 
  
                 <div class="card-body"> 
@@ -46,7 +46,7 @@
                    <br>
  
                     <table class="table table-condensed table-hover table-bordered table-striped"> 
-                        <thead> 
+                        <thead class="thead-light"> 
                             <tr> 
                                 <th class="text-center" rowspan="2" width="11%">Tanggal</th> 
                                 <th class="text-center" rowspan="2" width="5%">Jenis</th> 

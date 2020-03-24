@@ -8,8 +8,9 @@
         <div class="col-md-8"> 
  
             <div class="card"> 
-                <div class="card-header"> Ubah Status Pesanan
-                    <a href="{{ url('/pesanan') }}" class="float-right btn btn-sm btn-primary">Kembali</a>
+                <div class="card-header text-white bg-secondary">
+                    <b>Ubah Status Pesanan</b>
+                    <a href="{{ url('/pesanan') }}" class="float-right btn btn-sm btn-warning">Kembali</a>
                 </div>
                 <div class="card-body">
 
@@ -40,7 +41,7 @@
                             @endif  --}}
                         </div>
 
-                        <input type="submit" class="btn btn-primary" value="Simpan">
+                        <input type="submit" class="btn btn-success" value="Simpan">
 
                     </form>
 

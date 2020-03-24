@@ -7,9 +7,9 @@ Pesanan
   <div class="row justify-content-center">
     <div class="col-sm-12">
       <div class="card">
-        <div class="card-header">
+        <div class="card-header text-white bg-primary">
           
-          <h4>Tabel Data Pesanan</h4> 
+          <b>Tabel Data Pesanan</b> 
 
           {{ csrf_field() }}
 
@@ -30,7 +30,7 @@ Pesanan
                     @endif 
           <div class="table-responsive">
             <table class="table table-striped mb-0">
-            <thead>
+            <thead class="thead-light">
               <tr>
                 <th>#</th>
                 <th>ID Pesanan</th>
@@ -51,9 +51,9 @@ Pesanan
                 <td>{{ $no++ }}</td>
                 <td>{{ $p->id_pesanan }}</td>
                 <td>{{ $p->id_pengguna }}</td>
-                <td>{{ $p->ongkir }}</td>
-                <td>{{ $p->harga }}</td>
-                <td>{{ $p->total_bayar }}</td>
+                <td>{{ "Rp.".number_format($p->ongkir).",-" }}</td>
+                <td>{{ "Rp.".number_format($p->harga).",-" }}</td>
+                <td>{{ "Rp.".number_format($p->total_bayar).",-" }}</td>
                 <td>
                   @if ($p->status == "belum")
                   <span class="badge badge-soft-danger p-2">{{ $p->status }}</span>
@@ -63,7 +63,7 @@ Pesanan
                   @endif
                   </td>
                 <td class="">
-                  <a href="{{url ('pesanan/pesanan_edit', $p->id_pesanan) }}" class="btn btn-sm btn-primary">Konfirmasi</a>
+                  <a href="{{url ('pesanan/pesanan_edit', $p->id_pesanan) }}" class="btn btn-sm btn-success">Konfirmasi</a>
                   <a href="{{url ('pesanan/detail_pesanan', $p->id_pesanan) }}" class="btn btn-sm btn-info">Detail</a>
                 </td>
               </tr>

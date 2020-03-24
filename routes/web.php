@@ -76,6 +76,13 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/pencairan/cairkan/{id}', 'SaldoController@cairkan');
     Route::put('/pencairan/cairkan_proses/{id}', 'SaldoController@cairkan_proses');
     Route::get('/pencairan/hapus_cair/{id}', 'SaldoController@hapus_cair');
+
+    //Produk
+    Route::get('/produk', 'ProdukController@produk');
+    Route::get('/produk/edit/{id}', 'ProdukController@edit_produk');
+    Route::put('/produk/update/{id}', 'ProdukController@update_produk');
+    Route::get('/produk/hapus/{id}', 'ProdukController@hapus_produk');
+    Route::get('/produk/cari', 'ProdukController@cari_produk');
 });
 
 Auth::routes([ 

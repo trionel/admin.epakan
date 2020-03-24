@@ -105,8 +105,8 @@
         <div class="col-md-12">
 
             <div class="card"> 
-                <div class="card-header">
-                    Filter Laporan Keuangan
+                <div class="card-header text-white bg-success">
+                    <b>Laporan Keuangan</b>
                 </div>
                 <div class="card-body">
 

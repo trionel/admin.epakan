@@ -55,7 +55,7 @@
                 <div data-simplebar style="max-height: 230px;">
                     <a href="#" class="text-reset notification-item">
                         <div class="media">
-                            <img src="assets/images/users/avatar-3.jpg"
+                            <img src="{{asset ('assets/images/users/avatar-3.jpg')}}"
                                 class="mr-3 rounded-circle avatar-xs" alt="user-pic">
                             <div class="media-body">
                                 <h6 class="mt-0 mb-1">Victoria Mendis</h6>

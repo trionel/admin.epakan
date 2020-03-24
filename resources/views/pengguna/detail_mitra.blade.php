@@ -7,8 +7,9 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="card">
-              <div class="card-header">Detail Mitra ePakan
-                <a href="{{ url('/mitra') }}" class="float-right btn btn-sm btn-primary">Kembali</a>
+              <div class="card-header text-white bg-secondary">
+                <b>Detail Mitra ePakan</b>
+                <a href="{{ url('/mitra') }}" class="float-right btn btn-sm btn-warning">Kembali</a>
                   {{ csrf_field() }}
               </div>
               <br> 

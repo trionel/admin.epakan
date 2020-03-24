@@ -4,14 +4,15 @@
 @endsection
 @section('content')
 <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
+        <div class="row justify-content-center">
+          <div class="col-sm-9">
             <div class="card">
-              <div class="card-header">Tabel Mitra ePakan
+              <div class="card-header text-white bg-secondary">
+                <b>Tabel Mitra ePakan</b>
                   {{ csrf_field() }}
               </div>
               <br>
-              <div class="col-md-3"> 
+              <div class="col-md-6"> 
                 <form action="{{ url('/mitra/cari') }}" method="get" class="form-inline" enctype="multipart/form-data"> 
                   <input type="text" name="cari" value="<?php if(isset($_GET['cari'])){ echo $_GET['cari']; } ?>" class="form-control" placeholder="Cari .."> 
                   <input type="submit" class="btn btn-primary" value="Cari"> 
@@ -26,7 +27,7 @@
           </div>
           @endif
                 <table id="data" class="table table-condensed table-hover table-bordered table-striped">
-                  <thead>
+                  <thead class="thead-light">
                     <tr>
                       <th>#</th>
                       <th width="100px">ID Mitra</th>
@@ -56,7 +57,7 @@
                           <img src="http://marketplace.epakan.id/uploads/file/{{ $m->foto_cppb }}" alt=""></td>
                         <td>{{ $m->foto_sertifikat }}</td> --}}
                         <td class="text-center">
-                          <a href="{{url ('mitra/detail_mitra', $m->id) }}" class="btn btn-sm btn-primary">Detail</a>
+                          <a href="{{url ('mitra/detail_mitra', $m->id) }}" class="btn btn-sm btn-secondary">Detail</a>
                           <a href="{{url ('mitra/hapus_mitra', $m->id) }}" class="btn btn-sm btn-danger hapmit">Hapus</a>
                         </td>
                     </tr>

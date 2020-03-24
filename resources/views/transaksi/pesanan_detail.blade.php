@@ -7,9 +7,9 @@ Detail Pesanan
   <div class="row justify-content-center">
     <div class="col-sm-12">
       <div class="card">
-        <div class="card-header">
+        <div class="card-header text-white bg-secondary">
           
-          <h4>Tabel Detail Data Pesanan</h4> 
+          <b>Tabel Detail Data Pesanan</b>
 
           {{ csrf_field() }}
 
@@ -56,7 +56,7 @@ Detail Pesanan
                 <td>{{ $d->status }}</td>
                 <td>{{ $d->ambil }}</td>
                 <td class="">
-                  <a href="{{url ('pesanan/detail_edit', $d->id_detail) }}" class="btn btn-sm btn-primary">Ubah Status</a>
+                  <a href="{{url ('pesanan/detail_edit', $d->id_detail) }}" class="btn btn-sm btn-secondary">Ubah Status</a>
                   {{-- <a href="{{url ('pesanan/pesanan_detail', $d->id_detail) }}" class="btn btn-sm btn-info">Detail</a> --}}
                 </td>
               </tr>

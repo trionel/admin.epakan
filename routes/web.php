@@ -83,6 +83,7 @@ Route::group(['middleware'=>'auth'], function(){
     Route::put('/produk/update/{id}', 'ProdukController@update_produk');
     Route::get('/produk/hapus/{id}', 'ProdukController@hapus_produk');
     Route::get('/produk/cari', 'ProdukController@cari_produk');
+    Route::get('/produk/detail/{id}', 'ProdukController@detail_produk');
 });
 
 Auth::routes([ 
@@ -92,5 +93,17 @@ Auth::routes([
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/logout', 'HomeController@logout')->name('logout');
+
+//Notifikasi
+Route::get('/notifikasi', function () {
+    return view('notifikasi');
+});
+
+// Route::get('kirim', function(){
+//     \Mail::raw('Halo nel', function($message){
+//         $message->to('trioneltri@gmail.com','Onel');
+//         $message->subject('Nyoba');
+//     });
+// });
 
 

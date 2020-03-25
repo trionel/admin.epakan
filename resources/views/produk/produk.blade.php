@@ -65,6 +65,7 @@
                         <td>{{ $p->minimum }}</td>
                         <td>{{ $p->stok }}</td>
                         <td>
+                          {{-- <a href="{{url ('produk/detail', $p->id) }}" class="btn btn-sm btn-secondary">Detail</a> --}}
                             <a href="{{url ('produk/edit', $p->id) }}" class="btn btn-sm btn-warning">Edit</a>
                             <a href="{{url ('produk/hapus', $p->id) }}" class="btn btn-sm btn-danger prod">Hapus</a>
                         </td>

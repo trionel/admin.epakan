@@ -79,4 +79,10 @@ class ProdukController extends Controller
 
         return redirect('produk')->with("hapus","Produk berhasil dihapus");
     }
+
+    public function detail_produk($id)
+    {
+        $produk = Produk::where('id',$id)->get();
+        return view('produk.produk_detail',['produk' => $produk]); 
+    }
 }

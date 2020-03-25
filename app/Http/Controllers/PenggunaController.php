@@ -99,6 +99,7 @@ class PenggunaController extends Controller
 
     public function maps()
     {
-        return view('pengguna.maps');
+        $pengguna = Pengguna::all();
+        return view('pengguna.maps',['pengguna' => $pengguna]);
     }
 }

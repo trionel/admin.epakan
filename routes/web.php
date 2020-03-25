@@ -84,6 +84,12 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/produk/hapus/{id}', 'ProdukController@hapus_produk');
     Route::get('/produk/cari', 'ProdukController@cari_produk');
     Route::get('/produk/detail/{id}', 'ProdukController@detail_produk');
+
+    //Email
+    Route::get('/email', function(){
+        return view('kirim_email');
+    });
+    Route::post('/kirim_email','EmailController@kirim_email');
 });
 
 Auth::routes([ 

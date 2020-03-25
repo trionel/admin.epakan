@@ -51,7 +51,7 @@ var markers = [
                     });
                     (function (marker, data) {
                         google.maps.event.addListener(marker, "click", function (e) {
-                            infoWindow.setContent('<b>Nama Pelanggan</b> :' + data.nama + '<br>');
+                            infoWindow.setContent('<b>Nama Mitra</b> :' + data.nama + '<br>');
                             infoWindow.open(map, marker);
                         });
                     })(marker, data);

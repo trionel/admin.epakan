@@ -84,6 +84,14 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect"><i
+                            class="mdi mdi-email"></i><span>Broadcast</span></a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ url('/email') }}">Email</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect"><i
                             class="mdi mdi-share-variant"></i><span>User</span></a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{ url('/ganti_password') }}">Ganti Password</a></li>

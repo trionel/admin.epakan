@@ -47,6 +47,7 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/pesanan/detail_edit/{id}', 'TransaksiController@detail_edit');
     Route::put('/pesanan/detail_update/{id}', 'TransaksiController@detail_update');
     Route::get('/pesanan/cari', 'TransaksiController@cari_pesanan');
+    Route::get('/pesanan/hapus/{id}', 'TransaksiController@hapus_pesanan');
 
     //Laporan Keuangan
     Route::get('/laporan', 'LaporanController@index');
@@ -63,6 +64,7 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/pelanggan/cari', 'PenggunaController@cari_pelanggan');
     Route::get('/pelanggan/verifikasi/{id}', 'PenggunaController@verifikasi');
     Route::put('/pelanggan/verifikasi_update/{id}', 'PenggunaController@verifikasi_update');
+    Route::get('/pelanggan/hapus/{id}', 'PenggunaController@hapus_pelanggan');
 
     //Gmpas Pelanggan
     Route::get('/maps', 'PenggunaController@maps');

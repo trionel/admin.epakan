@@ -97,6 +97,14 @@ class PenggunaController extends Controller
         return view('pengguna.pelanggan',['pengguna' => $pengguna]); 
     }
 
+    public function hapus_pelanggan($id)
+    {
+        $pengguna = Pengguna::find($id);        
+        $pengguna->delete(); 
+
+        return redirect('pelanggan')->with("hapus","Pengguna {$pengguna->nama} berhasil dihapus"); 
+    }
+
     public function maps()
     {
         $pengguna = Pengguna::all();

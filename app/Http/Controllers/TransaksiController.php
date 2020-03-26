@@ -214,4 +214,12 @@ class TransaksiController extends Controller
 
         return redirect('pesanan');
     } 
+
+    public function hapus_pesanan($id_pesanan)
+    {
+        $pesanan = Pesanan::find($id_pesanan);         
+        $pesanan->delete(); 
+
+        return redirect('pesanan')->with("hapus","Pesanan berhasil dihapus");
+    }
 }

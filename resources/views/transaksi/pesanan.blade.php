@@ -28,6 +28,14 @@ Pesanan
                         {{ Session::get('edit') }} 
                     </div> 
                     @endif 
+                    
+                    @if($notif = Session::has('hapus'))
+          <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>{{ $notif }}</strong>
+            {{ Session::get('hapus') }}
+          </div>
+          @endif
           <div class="table-responsive">
             <table class="table table-striped mb-0">
             <thead class="thead-light">
@@ -65,6 +73,7 @@ Pesanan
                 <td class="">
                   <a href="{{url ('pesanan/pesanan_edit', $p->id_pesanan) }}" class="btn btn-sm btn-success">Konfirmasi</a>
                   <a href="{{url ('pesanan/detail_pesanan', $p->id_pesanan) }}" class="btn btn-sm btn-info">Detail</a>
+                  <a href="{{url ('pesanan/hapus', $p->id_pesanan) }}" class="btn btn-sm btn-danger hapes">Hapus</a>
                 </td>
               </tr>
               @endforeach
@@ -77,3 +86,29 @@ Pesanan
   </div>
   </div>
   @endsection
+  @section('script')
+      <script type="text/javascript">
+        $(document).on("click", ".hapes", function (e) {
+          var link = $(this).attr("href"); // "get" the intended link in a var
+          e.preventDefault();
+          Swal.fire({
+            title: 'Yakin ingin menghapus?',
+            text: "Data pesanan akan terhapus!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, Hapus!'
+          }).then((result) => {
+            if (result.value) {
+              document.location.href = link;
+              Swal.fire(
+                'Terhapus!',
+                'Data sudah terhapus.',
+                'success'
+              )
+            }
+          })
+        });
+      </script>
+      @endsection

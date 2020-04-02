@@ -323,7 +323,7 @@
                                     @php
                   $no = 1;
               @endphp
-              @foreach($pengguna as $m)
+              @foreach($penggunaa as $m)
               <tr>
                 <td>{{ $no++ }}</td>
                 <td>{{ $m->id }}</td>

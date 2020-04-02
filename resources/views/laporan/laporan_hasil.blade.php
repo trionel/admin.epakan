@@ -92,6 +92,7 @@
                     <a target="_blank" href="{{ url('/laporan/excel?dari='.$dari.'&sampai='.$sampai.$print) }}" class="btn btn-space btn-success">Export Excel</a>
 
                     <br>
+                    <div class="table-responsive">
                     <table class="table table-condensed table-hover table-bordered">
                         <thead class="thead-light">
                             <tr>
@@ -161,7 +162,7 @@
 
         </div>
     </div>
-
+            </div>
 </div>
 </div>
 </div>

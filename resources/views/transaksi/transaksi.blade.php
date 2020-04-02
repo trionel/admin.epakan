@@ -44,7 +44,7 @@
                                     </div> 
                              </div> 
                    <br>
- 
+                   <div class="table-responsive">
                     <table class="table table-condensed table-hover table-bordered table-striped"> 
                         <thead class="thead-light"> 
                             <tr> 
@@ -95,7 +95,7 @@
                     {{ $transaksi->links() }} 
                 </div> 
             </div> 
- 
+            </div>
         </div> 
     </div> 
 </div>

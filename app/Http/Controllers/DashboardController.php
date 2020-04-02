@@ -172,6 +172,7 @@ class DashboardController extends Controller
 
         //Pengguna
         $pengguna = Pengguna::all();
+        $pengguna = Pengguna::orderBy('id','desc')->offset(0)->limit(5)->get();
 
         //Saldo
         $saldo = $seluruh_pemasukan - $seluruh_pengeluaran;

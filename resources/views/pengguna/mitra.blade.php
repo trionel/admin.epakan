@@ -26,6 +26,7 @@
             {{ Session::get('hapus') }}
           </div>
           @endif
+          <div class="table-responsive">
                 <table id="data" class="table table-condensed table-hover table-bordered table-striped">
                   <thead class="thead-light">
                     <tr>
@@ -69,6 +70,7 @@
         </div>
       </div>
     </div>
+        </div>
 </div>
 @endsection
 @section('script')

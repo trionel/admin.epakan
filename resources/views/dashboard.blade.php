@@ -310,34 +310,21 @@
                             <table class="table table-centered table-hover table-xl mb-0" id="recent-orders">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
                                         <th width="100px">ID Pengguna</th>
                                         <th width="100px">Nama</th>
                                         <th>No. Telepon</th>
-                                        <th>Saldo</th>
                                         <th>Daerah</th>
-                                        <th>Status</th>
+                                        <th>Daftar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @php
-                  $no = 1;
-              @endphp
               @foreach($penggunaa as $m)
               <tr>
-                <td>{{ $no++ }}</td>
                 <td>{{ $m->id }}</td>
                         <td>{{ $m->nama }}</td>
                         <td>{{ $m->no_telp }}</td>
-                        <td>{{ $m->saldo }}</td>
                         <td>{{ $m->daerah }}</td>
-                        <td>@if ($m->status == 0)
-                          <span class="badge badge-soft-danger p-2">{{ $m->status }}</span>
-                          @endif
-                          @if ($m->status == 1)
-                          <span class="badge badge-soft-success p-2">{{ $m->status }}</span>
-                          @endif</td>
-                        <td>
+                        <td>{{ $m->created_at }}</td>
               </tr>
               @endforeach
             </tbody>

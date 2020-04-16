@@ -39,8 +39,8 @@
                   <thead class="thead-light">
                     <tr>
                         <th>#</th>
-                      <th width="100px">ID Pengguna</th>
-                      <th width="100px">Nama</th>
+                      <th width="100px">Pengguna</th>
+                      <th width="100px">Nama Produk</th>
                       <th>Harga</th>
                       <th>Satuan</th>
                       <th>Status</th>
@@ -57,7 +57,7 @@
                     @foreach($produk as $p)
                     <tr>
                         <td>{{ $no++ }}</td>
-                        <td>{{ $p->id_pengguna }}</td>
+                        <td>{{ $p->pengguna->nama }}</td>
                         <td>{{ $p->nama }}</td>
                         <td>{{ $p->harga }}</td>
                         <td>{{ $p->satuan }}</td>

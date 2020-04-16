@@ -168,7 +168,7 @@ class DashboardController extends Controller
 
         //Pesanan
         $pesanann = Pesanan::all();
-        $pesanan = Pesanan::orderBy('id_pesanan','desc')->offset(0)->limit(7)->get();
+        $pesanan = Pesanan::orderBy('created_at','desc')->offset(0)->limit(7)->get();
 
         //Pengguna
         $pengguna = Pengguna::all();

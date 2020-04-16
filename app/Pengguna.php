@@ -9,11 +9,11 @@ class Pengguna extends Model
     protected $table = "pengguna";
     protected $primaryKey = 'id';
 
-    public function saldo()
-    {
-        // 1 pengguna bisa memiliki banyak pencairan saldo
-        return $this->hasMany('App\Saldo');
-    }
+    // public function saldo()
+    // {
+    //     // 1 pengguna bisa memiliki banyak pencairan saldo
+    //     return $this->hasMany('App\Saldo');
+    // }
 
     // public function email()
     // {

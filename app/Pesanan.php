@@ -13,7 +13,7 @@ class Pesanan extends Model
 
     public function pesanan_detail()
     {
-        // 1 kategori bisa memiliki banyak transaksi
+        // 1 pesanan memiliki 1 detail pesanan
         return $this->hasOne('App\DetailPesanan');
     }
 }

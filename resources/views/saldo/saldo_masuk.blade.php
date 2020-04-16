@@ -33,8 +33,9 @@
           <thead class="thead-light">
             <tr>
               <th >No</th>
+              <th >Tanggal</th>
               <th>ID Pesanan</th>
-              <th>ID Pengguna</th>
+              <th>Mitra</th>
               <th>Saldo</th>
               <th width="25%" class="text-center">OPSI</th> 
             </tr>
@@ -46,8 +47,9 @@
                 @foreach($saldo as $s)
                 <tr>
                 <td>{{ $no++ }}</td>
+                <td>{{ $s->created_at }}</td>
                 <td>{{ $s->id_pesanan }}</td>
-                <td>{{ $s->id_pengguna }}</td>
+                <td>{{ $s->mitra->nama }}</td>
                 <td>{{ "Rp.".number_format($s->saldo).",-" }} </td>
                 <td class="text-center"> 
                     <a href="{{ url('/saldo/edit/'.$s->id) }}" class="btn btn-sm btn-secondary">Edit</a> 

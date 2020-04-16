@@ -35,7 +35,8 @@
           <thead class="thead-light">
             <tr>
               <th >No</th>
-              <th>ID Pengguna</th>
+              <th>Tanggal</th>
+              <th>Mitra</th>
               <th>Saldo</th>
               <th>Status</th>
               <th width="25%" class="text-center">OPSI</th> 
@@ -48,7 +49,8 @@
                 @foreach($pencairan as $p)
                 <tr>
                 <td>{{ $no++ }}</td>
-                <td>{{ $p->id_pengguna }}</td>
+                <td>{{ $p->created_at }}</td>
+                <td>{{ $p->mitra->nama }}</td>
                 <td>{{ "Rp.".number_format($p->saldo).",-" }} </td>
                 <td>@if ($p->status == "belum cair")
                   <span class="badge badge-soft-danger p-2">{{ $p->status }}</span>

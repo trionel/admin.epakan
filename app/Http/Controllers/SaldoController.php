@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Saldo;
 use App\Pencairan;
 use App\Pengguna;
+use App\Mitra;
 use App\Transaksi;
 
 class SaldoController extends Controller

@@ -14,7 +14,7 @@ class SaldoController extends Controller
 {
     public function saldo()
     {
-        $saldo = Saldo::orderBy('id','desc')->paginate(10);
+        $saldo = Saldo::orderBy('created_at','desc')->paginate(10);
 
         return view('saldo.saldo_masuk',['saldo' => $saldo]);
     }
@@ -55,7 +55,7 @@ class SaldoController extends Controller
 
     public function pencairan()
     {
-        $pencairan = Pencairan::orderBy('id','desc')->paginate(10);
+        $pencairan = Pencairan::orderBy('created_at','desc')->paginate(10);
 
         return view('saldo.pencairan',['pencairan' => $pencairan]);
     }

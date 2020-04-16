@@ -16,4 +16,10 @@ class Pesanan extends Model
         // 1 pesanan memiliki 1 detail pesanan
         return $this->hasOne('App\DetailPesanan');
     }
+
+    public function pengguna()
+    {
+        // tabel transaksi adalah milik tabel kategori
+        return $this->belongsTo('App\Pengguna','id_pengguna');
+    }
 }

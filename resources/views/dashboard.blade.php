@@ -262,7 +262,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>ID Pesanan</th>
-                                        <th>ID Pengguna</th>
+                                        <th>Pengguna</th>
                                         <th>Ongkir</th>
                                         <th>Harga</th>
                                         <th>Total Bayar</th>
@@ -277,7 +277,7 @@
               <tr>
                 <td>{{ $no++ }}</td>
                 <td>{{ $p->id_pesanan }}</td>
-                <td>{{ $p->id_pengguna }}</td>
+                <td>{{ $p->pengguna->nama }}</td>
                 <td>{{ $p->ongkir }}</td>
                 <td>{{ $p->harga }}</td>
                 <td>{{ $p->total_bayar }}</td>

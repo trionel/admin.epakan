@@ -50,7 +50,7 @@
                 <tr>
                 <td>{{ $no++ }}</td>
                 <td>{{ $p->created_at }}</td>
-                <td>{{ $p->mitra->nama }}</td>
+                <td>{{ $p->pengguna->nama }}</td>
                 <td>{{ "Rp.".number_format($p->saldo).",-" }} </td>
                 <td>@if ($p->status == "belum cair")
                   <span class="badge badge-soft-danger p-2">{{ $p->status }}</span>

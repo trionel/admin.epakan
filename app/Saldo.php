@@ -8,9 +8,9 @@ class Saldo extends Model
 {
     protected $table = "saldo_masuk";
 
-    public function mitra()
+    public function pengguna()
     {
         // tabel transaksi adalah milik tabel kategori
-        return $this->belongsTo('App\Mitra','id_pengguna','');
+        return $this->belongsTo('App\Pengguna','id_pengguna');
     }
 }

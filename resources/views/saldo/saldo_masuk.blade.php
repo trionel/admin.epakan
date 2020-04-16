@@ -49,7 +49,7 @@
                 <td>{{ $no++ }}</td>
                 <td>{{ $s->created_at }}</td>
                 <td>{{ $s->id_pesanan }}</td>
-                <td>{{ $s->mitra->nama }}</td>
+                <td>{{ $s->pengguna->nama }}</td>
                 <td>{{ "Rp.".number_format($s->saldo).",-" }} </td>
                 <td class="text-center"> 
                     <a href="{{ url('/saldo/edit/'.$s->id) }}" class="btn btn-sm btn-secondary">Edit</a> 

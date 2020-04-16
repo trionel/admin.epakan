@@ -119,7 +119,7 @@ class TransaksiController extends Controller
 
     public function pesanan()
     {
-        $pesanan = Pesanan::orderBy('id_pesanan','desc')->paginate(10);
+        $pesanan = Pesanan::orderBy('created_at','desc')->paginate(10);
         // $pesanan = Pesanan::all(); 
         return view('transaksi.pesanan',['pesanan' => $pesanan]); 
     }

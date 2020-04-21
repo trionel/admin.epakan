@@ -140,10 +140,13 @@ class TransaksiController extends Controller
         
         $pesanan = Pesanan::where('id_pesanan',$id_pesanan)->first();
 
-        
         $pesanan->status = $data->status;
 
         $pesanan->save();
+
+        $detail_pesanan = DetailPesanan::where('id_pesanan',$id_pesanan)->first();
+        $detail_pesanan->status = 'diproses';
+        $detail_pesanan->save();
 
 
         $trans = Transaksi::orderBy('id','desc')->first();

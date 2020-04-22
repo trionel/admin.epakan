@@ -78,7 +78,8 @@
                     <a href="javascript: void(0);" class="has-arrow waves-effect"><i
                             class="feather-map"></i><span>Maps</span></a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ url('/maps') }}">Google Maps</a></li>
+                        <li><a href="{{ url('/maps') }}">Penyebaran Mitra</a></li>
+                        <li><a href="{{ url('/maptrans') }}">Penyebaran Transaksi</a></li>
                     </ul>
                 </li>
 

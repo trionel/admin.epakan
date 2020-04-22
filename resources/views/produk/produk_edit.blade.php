@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    Edit Transaksi
+    Edit Produk
 @endsection
 @section('content')
 <div class="container">

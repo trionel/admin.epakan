@@ -110,4 +110,10 @@ class PenggunaController extends Controller
         $pengguna = Pengguna::all();
         return view('pengguna.maps',['pengguna' => $pengguna]);
     }
+
+    public function maptrans()
+    {
+        $pengguna = Pengguna::all();
+        return view('pengguna.maps_transaksi',['pengguna' => $pengguna]);
+    }
 }

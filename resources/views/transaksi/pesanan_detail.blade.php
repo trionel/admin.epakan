@@ -10,6 +10,7 @@ Detail Pesanan
         <div class="card-header text-white bg-secondary">
           
           <b>Tabel Detail Data Pesanan</b>
+          <a href="{{ url('/pesanan') }}" class="float-right btn btn-sm btn-warning">Kembali</a>
 
           {{ csrf_field() }}
 
@@ -20,7 +21,6 @@ Detail Pesanan
             <table class="table table-striped mb-0">
             <thead>
               <tr>
-                <th>#</th>
                 <th>ID Detail</th>
                 <th>ID Pesanan</th>
                 <th>ID Penjual</th>
@@ -33,16 +33,11 @@ Detail Pesanan
                 <th>Alamat Antar</th>
                 <th>Status</th>
                 <th>Ambil</th>
-                <th>Aksi</th>
               </tr>
             </thead>
             <tbody>
-              @php
-                  $no = 1;
-              @endphp
               @foreach($detail_pesanan as $d)
               <tr>
-                <td>{{ $no++ }}</td>
                 <td>{{ $d->id_detail }}</td>
                 <td>{{ $d->id_pesanan }}</td>
                 <td>{{ $d->id_penjual }}</td>
@@ -53,12 +48,25 @@ Detail Pesanan
                 <td>{{ $d->total_keuntungan }}</td>
                 <td>{{ $d->jumlah }}</td>
                 <td>{{ $d->alamat_antar }}</td>
-                <td>{{ $d->status }}</td>
+                <td>
+                  @if ($d->status == "belum bayar")
+                  <span class="badge badge-soft-danger p-2">{{ $d->status }}</span>
+                  @endif
+                  @if ($d->status == "diproses")
+                  <span class="badge badge-soft-warning p-2">{{ $d->status }}</span>
+                  @endif
+                  @if ($d->status == "dikirim")
+                  <span class="badge badge-soft-info p-2">{{ $d->status }}</span>
+                  @endif
+                  @if ($d->status == "diterima")
+                  <span class="badge badge-soft-success p-2">{{ $d->status }}</span>
+                  @endif
+                  </td>
                 <td>{{ $d->ambil }}</td>
-                <td class="">
+                {{-- <td class="">
                   <a href="{{url ('pesanan/detail_edit', $d->id_detail) }}" class="btn btn-sm btn-secondary">Ubah Status</a>
-                  {{-- <a href="{{url ('pesanan/pesanan_detail', $d->id_detail) }}" class="btn btn-sm btn-info">Detail</a> --}}
-                </td>
+                  {{-- <a href="{{url ('pesanan/pesanan_detail', $d->id_detail) }}" class="btn btn-sm btn-info">Detail</a>
+                </td> --}}
               </tr>
               @endforeach
             </tbody>

@@ -68,6 +68,7 @@ Route::group(['middleware'=>'auth'], function(){
 
     //Gmpas Pelanggan
     Route::get('/maps', 'PenggunaController@maps');
+    Route::get('/maptrans', 'PenggunaController@maptrans');
 
     //Saldo
     Route::get('/saldo', 'SaldoController@saldo');

@@ -75,10 +75,12 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/saldo/edit/{id}', 'SaldoController@edit_saldo');
     Route::put('/saldo/update/{id}', 'SaldoController@update_saldo');
     Route::get('/saldo/hapus/{id}', 'SaldoController@hapus_saldo');
+    Route::get('/saldo/hasil', 'SaldoController@hasil_saldo');
     Route::get('/pencairan', 'SaldoController@pencairan');
     Route::get('/pencairan/cairkan/{id}', 'SaldoController@cairkan');
     Route::put('/pencairan/cairkan_proses/{id}', 'SaldoController@cairkan_proses');
     Route::get('/pencairan/hapus_cair/{id}', 'SaldoController@hapus_cair');
+    Route::get('/pencairan/hasil', 'SaldoController@hasil_pencairan');
 
     //Produk
     Route::get('/produk', 'ProdukController@produk');

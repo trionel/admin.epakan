@@ -91,7 +91,7 @@ class SaldoController extends Controller
             'jenis' => 'pengeluaran', 
             'kategori_id' => '8', 
             'nominal' => $pencairan->saldo, 
-            'keterangan' => 'Pencairan', 
+            'keterangan' => $pencairan->id_pengguna, 
             'saldo' => $saldo
             ]);
 
@@ -104,5 +104,43 @@ class SaldoController extends Controller
         $pencairan->delete(); 
 
         return redirect('pencairan')->with("hapus","Data pencairan ID {$pencairan->id} sebesar Rp.{$pencairan->saldo} berhasil dihapus"); 
+    }
+
+    public function hasil_saldo(Request $req)
+    {
+        $req->validate([
+            'dari' => 'required',
+            'sampai' => 'required'
+        ]); 
+
+        $saldo = Saldo::all();
+
+        $dari = $req->dari;
+        $sampai = $req->sampai;
+
+        $saldo = Saldo::whereDate('created_at','>=',$dari)
+        ->whereDate('created_at','<=',$sampai)
+        ->orderBy('created_at','desc')->get();
+
+        return view('saldo.saldo_masuk',['saldo' => $saldo]);
+    }
+
+    public function hasil_pencairan(Request $req)
+    {
+        $req->validate([
+            'dari' => 'required',
+            'sampai' => 'required'
+        ]); 
+
+        $pencairan = Pencairan::all();
+
+        $dari = $req->dari;
+        $sampai = $req->sampai;
+
+        $pencairan = Pencairan::whereDate('created_at','>=',$dari)
+        ->whereDate('created_at','<=',$sampai)
+        ->orderBy('created_at','desc')->get();
+
+        return view('saldo.pencairan',['pencairan' => $pencairan]);
     }
 }

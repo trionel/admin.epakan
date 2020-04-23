@@ -158,7 +158,7 @@ class TransaksiController extends Controller
             'jenis' => 'pemasukan', 
             'kategori_id' => '1', 
             'nominal' => $pesanan->total_bayar, 
-            'keterangan' => 'Pesanan', 
+            'keterangan' => $pesanan->id_pesanan, 
             'saldo' => $saldo
             ]);
 

@@ -5,7 +5,62 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center"> 
-    <div class="col-xl-8">
+      <div class="col-md-12">
+
+        <div class="card"> 
+            <div class="card-header text-white bg-success">
+                <b>Saldo Masuk</b>
+            </div>
+            <div class="card-body">
+
+                <form method="get" action="{{ url('/saldo/hasil') }}">
+
+                    @csrf
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-3">
+                            <div class="form-group">
+
+                                <label>Dari Tanggal</label>
+                                <input type="date" name="dari" class="form-control">
+
+                                @if($errors->has('dari'))
+                                <span class="text-danger">
+                                    <strong>{{ $errors->first('dari') }}</strong>
+                                </span>
+                                @endif
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+
+                                <label>Sampai Tanggal</label>
+                                <input type="date" name="sampai" class="form-control">
+
+                                @if($errors->has('sampai'))
+                                <span class="text-danger">
+                                    <strong>{{ $errors->first('sampai') }}</strong>
+                                </span>
+                                @endif
+
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+
+                            <input type="submit" class="btn btn-primary mt-4" value="Tampilkan">
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+    {{-- <div class="col-xl-8">
         <div class="card">
           <div class="card-header text-white bg-success">
             <b>Data Saldo Masuk</b>
@@ -59,7 +114,9 @@
             @endforeach
           </tbody>
         </table>
-        {{ $saldo->links() }} 
+        @if ($saldo->count()>10)
+        {{ $saldo->links() }}     
+        @endif
       </div>
     </div>
         </div>

@@ -117,9 +117,7 @@
             @endforeach
           </tbody>
         </table>
-        @if ($pencairan->count()>10)
        {{ $pencairan->links() }}     
-        @endif
       </div>
     </div>
         </div>

@@ -114,9 +114,14 @@
             @endforeach
           </tbody>
         </table>
-        @if ($saldo->count()>10)
-        {{$saldo->links() }}     
-        @endif
+        {{-- @if ($saldo->count()>5) --}}
+        {{ $saldo->links() }}     
+        {{-- @endif --}}
+        {{-- @if ($saldo->count()>5)
+        {{ $saldo->links() }}
+        @else
+        {{ $saldo->links() }}
+        @endif --}}
       </div>
     </div>
         </div>

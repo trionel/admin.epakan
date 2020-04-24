@@ -122,7 +122,7 @@ class SaldoController extends Controller
         ->whereDate('created_at','<=',$sampai)
         ->orderBy('created_at','desc')->get();
 
-        return view('saldo.saldo_masuk',['saldo' => $saldo]);        
+        return view('saldo.saldo_hasil',['saldo' => $saldo]);        
     }
 
     public function hasil_pencairan(Request $req)
@@ -141,6 +141,6 @@ class SaldoController extends Controller
         ->whereDate('created_at','<=',$sampai)
         ->orderBy('created_at','desc')->get();
 
-        return view('saldo.pencairan',['pencairan' => $pencairan]);
+        return view('saldo.pencairan_hasil',['pencairan' => $pencairan]);
     }
 }

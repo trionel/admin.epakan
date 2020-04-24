@@ -91,7 +91,7 @@ class SaldoController extends Controller
             'jenis' => 'pengeluaran', 
             'kategori_id' => '8', 
             'nominal' => $pencairan->saldo, 
-            'keterangan' => $pencairan->id_pengguna, 
+            'keterangan' => $pencairan->pengguna->nama, 
             'saldo' => $saldo
             ]);
 

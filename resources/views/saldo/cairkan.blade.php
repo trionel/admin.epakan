@@ -21,7 +21,7 @@
                         {{ method_field('PUT') }}
 
                         <div class="form-group">
-                            <label>ID Pesanan</label>
+                            <label>ID Pengguna</label>
                             <input type="input" name="id_pengguna" class="form-control" value="{{ $pencairan->id_pengguna }}" readonly>
                         </div>
 

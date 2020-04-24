@@ -115,7 +115,7 @@
           </tbody>
         </table>
         @if ($saldo->count()>10)
-        {{ $saldo->links() }}     
+        {{$saldo->links()}}     
         @endif
       </div>
     </div>

@@ -118,7 +118,7 @@
           </tbody>
         </table>
         @if ($pencairan->count()>10)
-        {{ $pencairan->links() }}     
+       {{ $pencairan->links() }}     
         @endif
       </div>
     </div>

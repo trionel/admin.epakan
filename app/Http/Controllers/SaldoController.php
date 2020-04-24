@@ -122,7 +122,7 @@ class SaldoController extends Controller
         ->whereDate('created_at','<=',$sampai)
         ->orderBy('created_at','desc')->get();
 
-        return view('saldo.saldo_masuk',['saldo' => $saldo]);
+        return view('saldo.saldo_masuk',['saldo' => $saldo]);        
     }
 
     public function hasil_pencairan(Request $req)

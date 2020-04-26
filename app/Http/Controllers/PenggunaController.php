@@ -116,4 +116,27 @@ class PenggunaController extends Controller
         $pengguna = Pengguna::all();
         return view('pengguna.maps_transaksi',['pengguna' => $pengguna]);
     }
+
+    public function edit($id)
+    {
+         // mengambil data transaksi berdasarkan id 
+        $pengguna = Pengguna::find($id); 
+        
+        return view('pengguna.edit_pelanggan',['pengguna' => $pengguna]); 
+    }
+
+    public function edit_update($id, Request $data)
+    {
+        $data->validate([
+        'saldo' => 'required',
+        ]);
+
+        $pengguna = Pengguna::find($id); 
+ 
+        $pengguna->saldo = $data->saldo; 
+        
+        $pengguna->save();
+
+        return redirect('pelanggan')->with("edit","akun dengan nama {$pengguna->nama} sudah berhasil melakukan perubahan");
+    }
 }

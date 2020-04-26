@@ -38,8 +38,8 @@
                 <table id="data" class="table table-condensed table-hover table-bordered table-striped">
                   <thead class="thead-light">
                     <tr>
-                      <th width="100px">ID Pengguna</th>
-                      <th width="100px">Nama</th>
+                      <th>ID Pengguna</th>
+                      <th>Nama</th>
                       <th>No. Telepon</th>
                       <th>Saldo</th>
                       <th>Daerah</th>
@@ -67,6 +67,7 @@
                           @endif</td>
                         <td>
                           <a href="{{url ('pelanggan/verifikasi', $m->id) }}" class="btn btn-sm btn-success">Verifikasi</a>
+                          <a href="{{url ('pelanggan/edit', $m->id) }}" class="btn btn-sm btn-warning">Edit</a>
                           <a href="{{url ('pelanggan/hapus', $m->id) }}" class="btn btn-sm btn-danger hapeng">Hapus</a>
                         </td>
                     </tr>

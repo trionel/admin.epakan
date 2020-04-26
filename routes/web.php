@@ -64,6 +64,8 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/pelanggan/cari', 'PenggunaController@cari_pelanggan');
     Route::get('/pelanggan/verifikasi/{id}', 'PenggunaController@verifikasi');
     Route::put('/pelanggan/verifikasi_update/{id}', 'PenggunaController@verifikasi_update');
+    Route::get('/pelanggan/edit/{id}', 'PenggunaController@edit');
+    Route::put('/pelanggan/edit_update/{id}', 'PenggunaController@edit_update');
     Route::get('/pelanggan/hapus/{id}', 'PenggunaController@hapus_pelanggan');
 
     //Gmpas Pelanggan

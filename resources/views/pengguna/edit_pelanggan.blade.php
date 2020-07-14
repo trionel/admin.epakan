@@ -9,7 +9,7 @@
  
             <div class="card"> 
                 <div class="card-header text-white bg-secondary">
-                    <b>Ubah Data Pengguna</b>
+                    <b>Masukkan Saldo</b>
                     <a href="{{ url('/pelanggan') }}" class="float-right btn btn-sm btn-warning">Kembali</a>
                 </div>
                 <div class="card-body">

@@ -29,16 +29,16 @@
                     <tr>
                         <td>{{ $m->nama }}</td>
                         <td>
-                          <img src="http://marketplace.epakan.id/uploads/file/{{ $m->foto_ktp }}" alt="">
+                          <img src="http://marketplace.epakan.id/uploads/file/{{ $m->foto_ktp }}" alt="" width="90" height="90">
                         </td>
                         <td>
-                          <img src="http://marketplace.epakan.id/uploads/file/{{ $m->foto_peternakan }}" alt="">
+                          <img src="http://marketplace.epakan.id/uploads/file/{{ $m->foto_peternakan }}" alt="" width="90" height="90">
                         </td>
                         <td>
-                          <img src="http://marketplace.epakan.id/uploads/file/{{ $m->foto_cppb }}" alt="">
+                          <img src="http://marketplace.epakan.id/uploads/file/{{ $m->foto_cppb }}" alt="" width="90" height="90">
                         </td>
                         <td>
-                            <img src="http://marketplace.epakan.id/uploads/file/{{ $m->foto_sertifikat }}" alt="">
+                            <img src="http://marketplace.epakan.id/uploads/file/{{ $m->foto_sertifikat }}" alt="" width="90" height="90">
                         </td>
                     </tr>
                     @endforeach

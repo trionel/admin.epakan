@@ -9,7 +9,7 @@
 
     <div class="d-flex align-items-center">
 
-        <div class="dropdown d-none d-sm-inline-block ml-2">
+        {{-- <div class="dropdown d-none d-sm-inline-block ml-2">
             <button type="button" class="btn header-item noti-icon waves-effect"
                 id="page-header-search-dropdown" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
@@ -31,37 +31,65 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div> --}}
 
         <div class="dropdown d-inline-block">
             <button type="button" class="btn header-item noti-icon waves-effect"
                 id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
                 <i class="mdi mdi-bell"></i>
-                <span class="badge badge-danger badge-pill">3</span>
+        <span class="badge badge-danger badge-pill">{{(count($datas[0]))}}</span>
             </button>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
                 aria-labelledby="page-header-notifications-dropdown">
                 <div class="p-3">
                     <div class="row align-items-center">
                         <div class="col">
-                            <h6 class="m-0"> Notifications </h6>
+                            <h6 class="m-0"> Notifikasi </h6>
                         </div>
-                        <div class="col-auto">
+                        {{-- <div class="col-auto">
                             <a href="#!" class="small"> View All</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div data-simplebar style="max-height: 230px;">
-                    <a href="#" class="text-reset notification-item">
+                    <a href="{{ url('/pesanan') }}" class="text-reset notification-item">
                         <div class="media">
                             <img src="{{asset ('assets/images/users/avatar-3.jpg')}}"
                                 class="mr-3 rounded-circle avatar-xs" alt="user-pic">
                             <div class="media-body">
-                                <h6 class="mt-0 mb-1">Victoria Mendis</h6>
-                                <p class="font-size-12 mb-1">Just upgraded to premium account.</p>
-                                <p class="font-size-12 mb-0 text-muted"><i
-                                        class="mdi mdi-clock-outline"></i> 1 day ago</p>
+                                <h6 class="mt-0 mb-1">Pesanan Baru</h6>
+                                <p class="font-size-12 mb-1">Ada {{count($datas[0])}} Pesanan Baru Yang Belum Dibayar</p>
+                                {{-- <p class="font-size-12 mb-0 text-muted"><i
+                                    class="mdi mdi-clock-outline"></i> 1 day ago</p> --}}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div data-simplebar style="max-height: 230px;">
+                    <a href="{{ url('/pesanan') }}" class="text-reset notification-item">
+                        <div class="media">
+                            <img src="{{asset ('assets/images/users/avatar-3.jpg')}}"
+                                class="mr-3 rounded-circle avatar-xs" alt="user-pic">
+                            <div class="media-body">
+                                <h6 class="mt-0 mb-1">Pesanan Dikirim</h6>
+                                <p class="font-size-12 mb-1">Ada {{count($datas[1])}} Pesanan Dalam Proses Pengiriman</p>
+                                {{-- <p class="font-size-12 mb-0 text-muted"><i
+                                    class="mdi mdi-clock-outline"></i> 1 day ago</p> --}}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div data-simplebar style="max-height: 230px;">
+                    <a href="{{ url('/pesanan') }}" class="text-reset notification-item">
+                        <div class="media">
+                            <img src="{{asset ('assets/images/users/avatar-3.jpg')}}"
+                                class="mr-3 rounded-circle avatar-xs" alt="user-pic">
+                            <div class="media-body">
+                                <h6 class="mt-0 mb-1">Pesanan Diterima</h6>
+                                <p class="font-size-12 mb-1">{{count($datas[2])}} Pesanan Sudah Diterima</p>
+                                {{-- <p class="font-size-12 mb-0 text-muted"><i
+                                    class="mdi mdi-clock-outline"></i> 1 day ago</p> --}}
                             </div>
                         </div>
                     </a>
@@ -77,7 +105,7 @@
                 <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item d-flex align-items-center justify-content-between"
+                {{-- <a class="dropdown-item d-flex align-items-center justify-content-between"
                     href="javascript:void(0)">
                     <span>Inbox</span>
                     <span>
@@ -98,7 +126,7 @@
                 <a class="dropdown-item d-flex align-items-center justify-content-between"
                     href="javascript:void(0)">
                     <span>Lock Account</span>
-                </a>
+                </a> --}}
                 <a class="dropdown-item d-flex align-items-center justify-content-between"
                     href="{{ url('/logout') }}">
                     <span>Log Out</span>

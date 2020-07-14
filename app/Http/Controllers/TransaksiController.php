@@ -36,7 +36,10 @@ class TransaksiController extends Controller
 
         $trans = Transaksi::orderBy('id','desc')->first();
         if($data->kategori != 1){
+            if($trans->saldo >= 0)
             $saldo = $trans->saldo - $data->nominal;
+            else
+            $saldo = $trans->saldo + $data->nominal;
         }
         else{
             $saldo = $trans->saldo + $data->nominal;
@@ -120,9 +123,18 @@ class TransaksiController extends Controller
     public function pesanan()
     {
         $pesanan = Pesanan::orderBy('created_at','desc')->paginate(10);
+        $pesanann = Pesanan::orderBy('created_at','desc')->where('status','lunas')->paginate(10);
+        $pesanannn = Pesanan::orderBy('created_at','desc')->where('status','belum')->paginate(10);
         // $pesanan = Pesanan::all(); 
-        return view('transaksi.pesanan',['pesanan' => $pesanan]); 
+        return view('transaksi.pesanan',['pesanan' => $pesanan,'pesanann' => $pesanann,'pesanannn' => $pesanannn]); 
     }
+
+    // public function pesanann()
+    // {
+    //     $pesanann = Pesanan::orderBy('created_at','desc')->where('status','lunas')->paginate(10);
+    //     // $pesanan = Pesanan::all(); 
+    //     return view('transaksi.pesanan',['pesanann' => $pesanann]); 
+    // }
 
     public function pesanan_edit($id_pesanan)
     {
@@ -182,8 +194,38 @@ class TransaksiController extends Controller
         // menambahkan keyword pencarian ke data transaksi 
         $pesanan->appends($data->only('cari')); 
 
+        // keyword pencarian 
+        $carii = $data->carii; 
+         // mengambil data transaksi 
+        $pesanann = Pesanan::orderBy('id_pesanan','desc') 
+        ->where('id_pesanan','like',"%".$carii."%")
+        ->orWhere('ongkir','like',"%".$carii."%")
+        ->orWhere('harga','like',"%".$carii."%")
+        ->orWhere('total_bayar','like',"%".$carii."%")
+        ->orWhere('id_pengguna','like',"%".$carii."%")          
+        ->orWhere('status','like',"%".$carii."%")  
+        ->paginate(5); 
+
+        // menambahkan keyword pencarian ke data transaksi 
+        $pesanann->appends($data->only('carii')); 
+
+        // keyword pencarian 
+        $cariii = $data->cariii; 
+         // mengambil data transaksi 
+        $pesanannn = Pesanan::orderBy('id_pesanan','desc') 
+        ->where('id_pesanan','like',"%".$cariii."%")
+        ->orWhere('ongkir','like',"%".$cariii."%")
+        ->orWhere('harga','like',"%".$cariii."%")
+        ->orWhere('total_bayar','like',"%".$cariii."%")
+        ->orWhere('id_pengguna','like',"%".$cariii."%")          
+        ->orWhere('status','like',"%".$cariii."%")  
+        ->paginate(5); 
+
+        // menambahkan keyword pencarian ke data transaksi 
+        $pesanannn->appends($data->only('cariii')); 
+
         // passing data transaksi ke view transaksi.blade.php 
-        return view('transaksi.pesanan',['pesanan' => $pesanan]); 
+        return view('transaksi.pesanan',['pesanan' => $pesanan,'pesanann' => $pesanann,'pesanannn' => $pesanannn]); 
     }
 
     public function detail_pesanan($id_pesanan)

@@ -18,6 +18,7 @@ Route::group(['middleware'=>'auth'], function(){
 
     //Dashboard
     Route::get('/', 'DashboardController@index')->name('dashboard');
+    // Route::get('/', 'DashboardController@grafik');
 
     //Ganti Password
     Route::get('/ganti_password', 'HomeController@ganti_password'); 

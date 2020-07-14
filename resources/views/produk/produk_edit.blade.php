@@ -22,7 +22,7 @@
 
                         <div class="form-group">
                             <label>ID Pengguna</label>
-                            <input type="input" name="id_pengguna" class="form-control" value="{{ $produk->id }}" readonly>
+                            <input type="input" name="id_pengguna" class="form-control" value="{{ $produk->id_pengguna }}" readonly>
                         </div>
 
                         <div class="form-group">

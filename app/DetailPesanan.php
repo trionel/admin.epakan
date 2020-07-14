@@ -14,4 +14,19 @@ class DetailPesanan extends Model
         // 1 kategori bisa memiliki banyak transaksi
         return $this->belongsTo('App\Pesanan');
     }
+
+    public function produk()
+    {
+        return $this->belongsTo('App\Produk');
+    }
+
+    public function pengguna()
+    {
+        return $this->belongsTo('App\Pengguna');
+    }
+
+    // public function produkk()
+    // {
+    //     return $this->hasMany('App\Produk');
+    // }
 }

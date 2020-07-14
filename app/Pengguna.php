@@ -27,6 +27,11 @@ class Pengguna extends Model
         return $this->hasMany('App\Produk');
     }
 
+    public function pesanan_detail()
+    {
+        return $this->hasMany('App\DetailPesanan','id_pembeli');
+    }
+
     // public function email()
     // {
     //     // 1 pengguna bisa memiliki banyak pencairan saldo

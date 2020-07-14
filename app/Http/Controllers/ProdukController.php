@@ -16,7 +16,7 @@ class ProdukController extends Controller
 
     public function edit_produk($id)
     {
-         // mengambil data pesanan berdasarkan id pesanan 
+         // mengambil data produk berdasarkan id produk 
         $produk = Produk::find($id); 
         
         return view('produk.produk_edit',['produk' => $produk]); 

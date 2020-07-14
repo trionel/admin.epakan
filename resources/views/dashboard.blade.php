@@ -263,8 +263,6 @@
                                         <th>#</th>
                                         <th>ID Pesanan</th>
                                         <th>Pengguna</th>
-                                        <th>Ongkir</th>
-                                        <th>Harga</th>
                                         <th>Total Bayar</th>
                                         <th>Status Pembayaran</th>
                                     </tr>
@@ -278,8 +276,6 @@
                 <td>{{ $no++ }}</td>
                 <td>{{ $p->id_pesanan }}</td>
                 <td>{{ $p->pengguna->nama }}</td>
-                <td>{{ $p->ongkir }}</td>
-                <td>{{ $p->harga }}</td>
                 <td>{{ $p->total_bayar }}</td>
                 <td>
                   @if ($p->status == "belum")
@@ -304,6 +300,45 @@
                 <div class="card">
                     <div class="card-body">
                         {{ csrf_field() }}
+                        <h4 class="card-title">Produk Terlaris</h4>
+                        <p class="card-subtitle mb-4">Periode transaksi 1 bulan terakhir</p>
+                        <div class="table-responsive">
+                            <table class="table table-centered table-hover table-xl mb-0" id="recent-orders">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nama Produk</th>
+                                        <th>Harga</th>
+                                        <th>Kategori</th>
+                                        <th>Total Terjual</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @php
+                  $no = 1;
+              @endphp
+              @foreach($produkk as $p)
+              <tr>
+                <td>{{ $no++ }}</td>
+                <td>{{ $p->nama }}</td>
+                <td>{{ $p->harga }}</td>
+                <td>{{ $p->kategori }}</td>
+                <td>{{ $p->jumlah}}</td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+          {{-- {{ $pesanan->links() }} --}}
+                        </div>
+
+        
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+            </div><!-- end col -->
+            <div class="col-xl-9">
+                <div class="card">
+                    <div class="card-body">
+                        {{ csrf_field() }}
                         <h4 class="card-title">Pengguna Terbaru</h4>
                         <p class="card-subtitle mb-4">Periode pesanan 1 bulan terakhir</p>
                         <div class="table-responsive">
@@ -325,6 +360,42 @@
                         <td>{{ $m->no_telp }}</td>
                         <td>{{ $m->daerah }}</td>
                         <td>{{ $m->created_at }}</td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
+          {{-- {{ $pesanan->links() }} --}}
+                        </div>
+
+        
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+            </div><!-- end col -->
+
+            <div class="col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+                        {{ csrf_field() }}
+                        <h4 class="card-title">Pelanggan Setia</h4>
+                        <p class="card-subtitle mb-4">Pengguna dengan transaksi terbanyak minggu ini</p>
+                        <div class="table-responsive">
+                            <table class="table table-centered table-hover table-xl mb-0" id="recent-orders">
+                                <thead>
+                                    <tr>
+                                        <th width="100px">#</th>
+                                        <th width="100px">Nama</th>
+                                        <th>Transaksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @php
+                  $no = 1;
+              @endphp
+              @foreach($pengguna_setia as $m)
+              <tr>
+                <td>{{ $no++ }}</td>
+                        <td>{{ $m->nama }}</td>
+                        <td>{{ $m->jumlah }}</td>
               </tr>
               @endforeach
             </tbody>
@@ -409,7 +480,7 @@ var markers = [
     <script type="text/javascript">
         Highcharts.chart('coba', {
     chart: {
-        type: 'column'
+        type: 'area'
     },
     title: {
         text: 'Laporan Transaksi ePakan'
@@ -418,20 +489,7 @@ var markers = [
         text: 'Pemasukan dan Pengeluaran'
     },
     xAxis: {
-        categories: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec'
-        ],
+        categories: {!!$bulan!!},
         crosshair: true
     },
     yAxis: {
@@ -456,16 +514,15 @@ var markers = [
     },
     series: [{
         name: 'Pemasukan',
-        data: [{{$tm1}},{{$tm2}},{{$tm3}},{{$tm4}},{{$tm5}},{{$tm6}},{{$tm7}},{{$tm8}},{{$tm9}},{{$tm10}},{{$tm11}},{{$tm12}}]
+        data: {!!$pemasukan!!}
 
     }, {
         name: 'Pengeluaran',
-        data: [{{$tk1}},{{$tk2}},{{$tk3}},{{$tk4}},{{$tk5}},{{$tk6}},{{$tk7}},{{$tk8}},{{$tk9}},{{$tk10}},{{$tk11}},{{$tk12}}]
+        data: {!!$pengeluaran!!}
 
     }]
 });
     </script>
-
 <script type="text/javascript">
     Highcharts.chart('kategori', {
     chart: {
@@ -514,6 +571,7 @@ var markers = [
     }]
 });
 </script>
+
 <script type="text/javascript">
     Highcharts.chart('produk', {
     chart: {

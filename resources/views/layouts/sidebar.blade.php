@@ -60,7 +60,7 @@
                             class="feather-credit-card"></i><span>Saldo</span></a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ url('/saldo') }}">Saldo Masuk</a></li>
-                        <li><a href="{{ url('/pencairan') }}">Pencairan Saldo</a></li>
+                        <li><a href="{{ url('/pencairan') }}">Penarikan Saldo</a></li>
                     </ul>
                 </li>
 

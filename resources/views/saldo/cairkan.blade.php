@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    Status Pencairan
+    Status Penarikan
 @endsection
 @section('content')
 <div class="container">
@@ -9,7 +9,7 @@
  
             <div class="card"> 
                 <div class="card-header text-white bg-success">
-                    <b>Ubah Status Pencairan</b>
+                    <b>Ubah Status Penarikan</b>
                     <a href="{{ url('/pencairan') }}" class="float-right btn btn-sm btn-warning">Kembali</a>
                 </div>
                 <div class="card-body">

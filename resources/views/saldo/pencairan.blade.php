@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    Pencairan Saldo
+    Penarikan Saldo
 @endsection
 @section('content')
 <div class="container">
@@ -110,7 +110,7 @@
                   <span class="badge badge-soft-success p-2">{{ $p->status }}</span>
                   @endif</td>
                 <td class="text-center"> 
-                    <a href="{{ url('/pencairan/cairkan/'.$p->id) }}" class="btn btn-sm btn-success">Cairkan</a> 
+                    <a href="{{ url('/pencairan/cairkan/'.$p->id) }}" class="btn btn-sm btn-success">Tarik</a> 
                     <a href="{{ url('/pencairan/hapus_cair/'.$p->id) }}" class="btn btn-sm btn-danger hapca">Hapus</a> 
                 </td> 
                 </tr>
@@ -129,7 +129,7 @@
           e.preventDefault();
           Swal.fire({
             title: 'Yakin ingin menghapus?',
-            text: "Data pencairan akan terhapus!",
+            text: "Data penarikan akan terhapus!",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

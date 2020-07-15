@@ -67,7 +67,7 @@
                           @endif</td>
                         <td>
                           <a href="{{url ('pelanggan/verifikasi', $m->id) }}" class="btn btn-sm btn-success">Verifikasi</a>
-                          <a href="{{url ('pelanggan/edit', $m->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                          {{-- <a href="{{url ('pelanggan/edit', $m->id) }}" class="btn btn-sm btn-warning">Edit</a> --}}
                           <a href="{{url ('pelanggan/hapus', $m->id) }}" class="btn btn-sm btn-danger hapeng">Hapus</a>
                         </td>
                     </tr>

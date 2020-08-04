@@ -55,7 +55,7 @@
                 <div data-simplebar style="max-height: 230px;">
                     <a href="{{ url('/pesanan') }}" class="text-reset notification-item">
                         <div class="media">
-                            <img src="{{asset ('assets/images/users/avatar-3.jpg')}}"
+                            <img src="{{asset ('assets/images/users/pesanan.png')}}"
                                 class="mr-3 rounded-circle avatar-xs" alt="user-pic">
                             <div class="media-body">
                                 <h6 class="mt-0 mb-1">Pesanan Baru</h6>
@@ -69,7 +69,7 @@
                 <div data-simplebar style="max-height: 230px;">
                     <a href="{{ url('/pesanan') }}" class="text-reset notification-item">
                         <div class="media">
-                            <img src="{{asset ('assets/images/users/avatar-3.jpg')}}"
+                            <img src="{{asset ('assets/images/users/dikirim.png')}}"
                                 class="mr-3 rounded-circle avatar-xs" alt="user-pic">
                             <div class="media-body">
                                 <h6 class="mt-0 mb-1">Pesanan Dikirim</h6>
@@ -83,7 +83,7 @@
                 <div data-simplebar style="max-height: 230px;">
                     <a href="{{ url('/pesanan') }}" class="text-reset notification-item">
                         <div class="media">
-                            <img src="{{asset ('assets/images/users/avatar-3.jpg')}}"
+                            <img src="{{asset ('assets/images/users/diterima.png')}}"
                                 class="mr-3 rounded-circle avatar-xs" alt="user-pic">
                             <div class="media-body">
                                 <h6 class="mt-0 mb-1">Pesanan Diterima</h6>
